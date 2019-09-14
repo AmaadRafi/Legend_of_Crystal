@@ -18,3 +18,12 @@ function createTeam(warriorName, mageName, rangerName){
 
     return team;
 }
+
+  var cm = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        indentUnit: 4,
+        indentWithTabs: false,
+        theme: "solarized light",
+        mode: "javascript",
+        autoCloseBrackets: true,
+    });
