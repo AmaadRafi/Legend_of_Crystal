@@ -7,7 +7,6 @@ a single hero, but the code will allow for multiple if necessary.
 Note that toUpperCase() is used when comparing objects to prevent
 user typing errors
 */ 
-var inventorySize = 10;
 var hitpoints = 100;
 var attackModifier = 1.0;
 var defenseModifier = 1.0;
@@ -23,7 +22,6 @@ class Hero {
         this.defenseModifier = defenseModifier;
         this.weapon = null;
         this.armor = null;
-        this.inventory = new Array(inventorySize);
     }
     /* toDo create attack function 
     
@@ -50,17 +48,17 @@ class Hero {
 
     Jason Allen 9/11/2019
     */ 
-    use(thisItem){
+    use(thisItem, inventory){
     
-        var inventoryItemIndex = this.searchForItem(thisItem);
+        var inventoryItemIndex = this.searchForItem(thisItem, inventory);
 
         if(inventoryItemIndex == -1)
             this.alertItemNotFound(thisItem);
         else{
-            var inventoryItem = this.inventory[inventoryItemIndex];
+            var inventoryItem = inventory[inventoryItemIndex];
 
             if(inventoryItem.isConsumable){ 
-                delete this.inventory[inventoryItemIndex];
+                delete inventory[inventoryItemIndex];
                 this.alertUsedItem(thisItem);
             }
             else{
@@ -69,24 +67,27 @@ class Hero {
         }
     }
     /*================================== changeWeapon =====================================
-    Similar behavior to 'use' (see above).  Item is not removed from inventory.  Calls 
-    searchForItem().  Returns nothing.
+    Similar behavior to 'use' (see above).  Item is removed from inventory and swapped with
+    the currently held weapon.  Calls searchForItem().  Returns nothing.
 
     Jason Allen 9/11/2019
     */ 
-    changeWeapon(thisItem){
-        var inventoryItemIndex = this.searchForItem(thisItem);
+    changeWeapon(thisItem, inventory){
+        var inventoryItemIndex = this.searchForItem(thisItem, inventory);
         if(inventoryItemIndex == -1)
             this.alertItemNotFound(thisItem);
         else{
-            var inventoryItem = this.inventory[inventoryItemIndex];
+            var inventoryItem = inventory[inventoryItemIndex];
             
             if(inventoryItem.type != "WEAPON")
                 this.alertCannotEquipSlot(inventoryItem.name, "weapon");
             else if(inventoryItem.weaponType != this.allowedWeaponType)
                 this.alertCannotEquip(inventoryItem.name, this.heroType)
-            else
+            else{
+                var oldWeapon = this.weapon;
                 this.weapon = inventoryItem;
+                inventory[inventoryItemIndex] = oldWeapon;
+            }
         }
     }
      /*================================== changeArmor =====================================
@@ -94,57 +95,24 @@ class Hero {
 
     Jason Allen 9/11/2019
     */ 
-   changeArmor(thisItem){
-    var inventoryItemIndex = this.searchForItem(thisItem);
+   changeArmor(thisItem, inventory){
+    var inventoryItemIndex = this.searchForItem(thisItem, inventory);
     if(inventoryItemIndex == -1)
         this.alertItemNotFound(thisItem);
     else{
-        var inventoryItem = this.inventory[inventoryItemIndex];
+        var inventoryItem = inventory[inventoryItemIndex];
         
         if(inventoryItem.type != "ARMOR")
                 this.alertCannotEquipSlot(inventoryItem.name, "armor");
-            else if(inventoryItem.weaponType != this.allowedArmorType)
+            else if(inventoryItem.armorType != this.allowedArmorType)
                 this.alertCannotEquip(inventoryItem.name, this.heroType)
-            else
-                this.weapon = inventoryItem;
+            else{
+                var oldArmor= this.armor;
+                this.armor = inventoryItem;
+                inventory[inventoryItemIndex] = oldArmor;
+            }
     }
 }
-    /*================================== pickup =====================================
-    Searches for an empty inventory space and deposits the item there.  Otherwise,
-    alert that inventory is full.  Returns nothing.
-
-    Jason Allen 9/11/2019
-    */ 
-    pickUp(thisItem){ /* toDo: probably needs to search the item database and match by name.  Jason Allen 9/11/2019 */
-
-        for(var i = 0; i < this.inventory.length; i++){
-
-            if(this.inventory[i] == null){
-                this.inventory[i] = thisItem;
-                return;
-            }
-        }
-        this.alertInventoryFull();
-
-    }
-     /*================================== drop =====================================
-    Almost identical behavior to use (see above).  Removes item from inventory.
-    Calls searchForItem().  Returns nothing.
-
-    Jason Allen 9/11/2019
-    */ 
-    drop(thisItem){
-        var inventoryItemIndex = this.searchForItem(thisItem);
-
-        if(inventoryItemIndex == -1)
-            this.alertItemNotFound(thisItem);
-        else{
-            var inventoryItem = this.inventory[inventoryItemIndex];
-
-            delete this.inventory[inventoryItemIndex];
-            this.alertDroppedItem(thisItem);
-        }
-    }
      /*================================== searchForItem =====================================
     Helper function to search the inventory for a specific item.  Item is searched by string.
     The argument is protected for comparison by first converting into upper case, which was
@@ -153,11 +121,11 @@ class Hero {
 
     Jason Allen 9/11/2019
     */ 
-    searchForItem(thisItem){
+    searchForItem(thisItem, inventory){
         var itemName = thisItem.toUpperCase();
-        for(var i = 0; i < this.inventory.length; i++){
+        for(var i = 0; i < inventory.length; i++){
 
-            var currentInventoryItem = this.inventory[i];
+            var currentInventoryItem = inventory[i];
 
             if(currentInventoryItem != null && currentInventoryItem.name === itemName){ 
                return i;
@@ -165,15 +133,8 @@ class Hero {
         }
         return -1;
     }
-    
-    alertInventoryFull(){
-        console.log("inventory full!\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
-    }
     alertItemNotFound(thisItem){
         console.log(thisItem + " not found."); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
-    }
-    alertDroppedItem(thisItem){
-        console.log("you dropped a " + thisItem + "\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
     alertNonConsumable(thisItem){
         console.log("You tried to use the " + thisItem + ", but nothing happened"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
@@ -182,14 +143,14 @@ class Hero {
         console.log("you used a " + thisItem + "\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
     alertCannotEquip(thisItem, heroType){
-        console.log(thisItem + " cannot be equppied by " + heroType);
+        console.log(thisItem + " cannot be equppied by " + heroType); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
     alertCannotEquipSlot(thisItem, slot){
-        console.log("you cannot equip " + thisItem + " in the " + slot + " slot");
+        console.log("you cannot equip " + thisItem + " in the " + slot + " slot"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
     debugPrintHeroStats(){
-        console.log("hero name is: " + this.name + "\thero HP is: " + this.hitpoints + "\thero weapon is: " + this.weapon.getName() + 
-        "\thero aromor is: " + this.armor.getName());
+        console.log("hero name is: " + this.name + "\thero HP is: " + this.hitpoints + "\thero weapon is: " + this.weapon.name + 
+        "\thero aromor is: " + this.armor.name); 
     }
     debugPrintInventory(){
         console.log(this.inventory.join());
@@ -197,7 +158,7 @@ class Hero {
 }
 class HeroWarrior extends Hero{
     
-    constructor(name) {
+    constructor(name, inventory) {
         super(name);
         this.name = name + " the Warrior";
         this.heroType = "WARRIOR";
@@ -205,10 +166,28 @@ class HeroWarrior extends Hero{
         this.allowedArmorType = "HEAVY";
         var defaultWarWeapon = new Weapon("Sword", "none", "close", 10, false);
         var defaultWarClothes = new Armor("Clothes", "none", "heavy", 1, false);
-        this.pickUp(defaultWarWeapon);
-        this.pickUp(defaultWarClothes);
         this.weapon = defaultWarWeapon;
         this.armor = defaultWarClothes;
+    }
+    
+    /*================================== getFromCache =====================================
+    retrieves saved hero data from window.localStorage, and parses it into a new identical
+    hero object.  It is necessary to create a new object because JSON does not include
+    function definitions when it converts a class to a string via stringify().  For the same
+    reason, we must also recreate the weapons and armor the hero is holding.
+
+    Jason Allen 9/14/2019
+    */
+    static getFromCache(heroData) {
+        var heroObject = Object.assign(new HeroWarrior(), JSON.parse(heroData));
+
+        heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+
+        heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
+            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
+
+        return heroObject;
     }
 }
 class HeroMage extends Hero{
@@ -221,10 +200,25 @@ class HeroMage extends Hero{
         this.allowedArmorType = "ROBE";
         var defaultMageWeapon = new Weapon("Wand", "none", "magic", 10, false);
         var defaultMageClothes = new Armor("Clothes", "none", "robe", 1, false);
-        this.pickUp(defaultMageWeapon);
-        this.pickUp(defaultMageClothes);
         this.weapon = defaultMageWeapon;
         this.armor = defaultMageClothes;
+    }
+    
+    /*================================== getFromCache =====================================
+    see above
+
+    Jason Allen 9/14/2019
+    */
+    static getFromCache(heroData) {
+        var heroObject = Object.assign(new HeroMage(), JSON.parse(heroData));
+
+        heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+
+        heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
+            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
+
+        return heroObject;
     }
 }
 class HeroRanger extends Hero{
@@ -237,9 +231,24 @@ class HeroRanger extends Hero{
         this.allowedArmorType = "LIGHT";
         var defaultRangeWeapon = new Weapon("Bow", "none", "ranged", 10, false);
         var defaultRangeClothes = new Armor("Clothes", "none", "light", 1, false);
-        this.pickUp(defaultRangeWeapon);
-        this.pickUp(defaultRangeClothes);
         this.weapon = defaultRangeWeapon;
         this.armor = defaultRangeClothes;
+    }
+    
+    /*================================== getFromCache =====================================
+    see above
+
+    Jason Allen 9/14/2019
+    */
+    static getFromCache(heroData) {
+        var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
+
+        heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+
+        heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
+            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
+
+        return heroObject;
     }
 }

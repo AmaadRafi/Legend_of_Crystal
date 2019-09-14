@@ -5,8 +5,11 @@ functionalities of the player and inventory systems.
 May later be used to serve as a database of all 
 objects in the game.
 */ 
-
-var team = createTeam("Jay", "Amaad", "Shabir");
+var warriorObject = HeroWarrior.getFromCache(window.localStorage.getItem('warrior'));
+var mageObject = HeroMage.getFromCache(window.localStorage.getItem('mage'));
+var rangerObject = HeroRanger.getFromCache(window.localStorage.getItem('ranger'));
+var inventoryObject = Inventory.getFromCache(window.localStorage.getItem('Inventory'));
+var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject.inventory);
 
 var sword = new Weapon("Sword", "fire", "close", 150, false);
 var greatSword = new Weapon("Great Sword", "none", "close", 250, false);
@@ -17,6 +20,7 @@ var staff = new Weapon("Staff", "none", "magic", 300, false);
 var wand = new Weapon("Wand", "none", "magic", 200, false);
 
 var iceArmor = new Armor("Ice Armor", "ice", "heavy", 1, false);
+var waterRobe = new Armor("Water Robe", "water", "robe", 30, false);
 
 var potion = new Item("Potion", "consumable", true);
 potion.setConsumeMessage("You used a " + potion.displayName);
@@ -27,35 +31,36 @@ var weaponDatabase = [sword, greatSword, dagger, bow, gun];
 
 for(var i = 0; i < weaponDatabase.length; i++){
 
-   team[0].pickUp(weaponDatabase[i]);
-   team[1].pickUp(weaponDatabase[i]);
-   team[2].pickUp(weaponDatabase[i]);
+   inventoryObject.pickUp(weaponDatabase[i]);
 }
 
-team[0].pickUp(potion);
-team[0].pickUp(largePotion);
+inventoryObject.pickUp(potion);
+inventoryObject.pickUp(largePotion);
 
-team[0].debugPrintHeroStats();
-team[0].debugPrintInventory();
-team[1].debugPrintHeroStats();
-team[1].debugPrintInventory();
-team[2].debugPrintHeroStats();
-team[2].debugPrintInventory();
+party.warrior.debugPrintHeroStats();
+inventoryObject.debugPrintInventory();
+party.mage.debugPrintHeroStats();
+inventoryObject.debugPrintInventory();
+party.ranger.debugPrintHeroStats();
 
-team[0].pickUp(iceArmor);
+inventoryObject.pickUp(iceArmor);
+inventoryObject.pickUp(waterRobe);
+inventoryObject.debugPrintInventory();
 
-team[0].changeWeapon("Gun");
-team[0].changeArmor("Ice Armor");
+party.changeWeapon("warrior", "gun");
+party.changeArmor("warrior", "ice armor");
+party.changeArmor("Ranger", "Water Robe");
+party.changeArmor("mage", "Water Robe");
 
-team[0].debugPrintHeroStats();
+party.mage.debugPrintHeroStats();
 
-team[0].changeWeapon("Potion");
-team[0].debugPrintHeroStats();
+party.changeWeapon("warrior", "potion");
+party.warrior.debugPrintHeroStats();
 
-team[0].changeWeapon("Great Sword");
-team[0].debugPrintHeroStats();
+party.changeWeapon("warrior", "great sword");
+party.warrior.debugPrintHeroStats();
 
-team[0].drop("dagger");
-team[0].use("knife");
-team[0].use("potion");
-team[0].debugPrintInventory();
+inventoryObject.drop("dagger", inventoryObject.inventory);
+party.use("warrior", "knife");
+party.use("warrior", "potion");
+inventoryObject.debugPrintInventory();

@@ -1,0 +1,35 @@
+*** See all toDo statements within the script files (search for 'toDo')
+
+================================= backend ================================
+1.  Create a database for all items in the game (array of items).  May 
+be included in the Inventory.js script, or perhaps it's own script.  Must
+then be added to the persistent local storage
+
+2.  Create a class for enemies similar to Hero.js.  This does not need to 
+be added to persistent storage
+
+3.  Figure out how the attack/defend/battle system will operate
+
+4.  Incorporate user code injection into the game (this also falls under front
+end)
+
+5.  Work with frontend team to make the game more interesting - figuring out
+how each challenge with each enemies will go, etc.
+
+================================= frontend ================================
+1.  Create the characters and items that will be found in the game
+
+2.  Create the game world and areas in html
+
+3.  Write the story board/end goal of the game
+
+4.  Decide how things will be formatted on the screen, the player characters,
+the inventory display, battle screen, and the user input box (this coincides 
+with #4 in backend)
+
+5. Develop animations for the player characters/enemies
+
+6.  Come up with ideas that make the game more interesting that can be included 
+on the back end.  Maybe you need a certain sword to fight a boss, or a key to
+unlock a certain door to the next area.
+

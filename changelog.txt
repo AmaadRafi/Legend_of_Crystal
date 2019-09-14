@@ -1,0 +1,23 @@
+9/12/19 - Jason Allen
+
+initial commit.  Added functionality for character creation 
+and inventory system
+
+===============================================================
+
+9/14/19 - Jason Allen
+
+Developed functionality for persistent data storage on page
+loads.  This will allow the character and inventory data to 
+stay consistent across different areas of the game.
+
+Changed to a shared inventory system between 3 characters.  Items
+currently held by players are no longer present in inventory.
+Equipping a new weapon or armor swaps the currently held one with
+the one chosen from inventory.
+
+Developed the first phase of user interaction with the game.
+functionality with the inventory system is encapsulated by the
+'Party' class which will be present in every .html file
+
+===============================================================
