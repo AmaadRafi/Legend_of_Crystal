@@ -16,6 +16,9 @@ currently held by players are no longer present in inventory.
 Equipping a new weapon or armor swaps the currently held one with
 the one chosen from inventory.
 
+Moved drop/pickup methods from Hero class to Inventory class. (These
+functions are now party-wide)
+
 Developed the first phase of user interaction with the game.
 functionality with the inventory system is encapsulated by the
 'Party' class which will be present in every .html file
