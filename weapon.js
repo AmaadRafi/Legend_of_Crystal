@@ -49,12 +49,12 @@ var bow = new Weapon("BOW", "NONE", "RANGED", 250, false);
 var crossbow = new Weapon("CROSSBOW", "NONE", "RANGED", 300, false);
 
 // BRAWLER - earth bender for now, but we can add more elements (think Thanos w/ gauntlet + stones(elements))
-var gauntlet = new("GAUNTLET", "EARTH", "MELEE", 200, false);
+var gauntlet = new Weapon("GAUNTLET", "EARTH", "MELEE", 200, false);
 
 // ARMOR - let's keep it simple, I don't think we need elements for armor
-var cloth_armor = new ("CLOTH ARMOR", "NONE", "LIGHT", 10, false);
-var chain_vest = new("CHAIN VEST", "NONE", "HEAVY", 25, false);
-var robe = new("ROBE", "NONE", "LIGHT", 10, false);
+var cloth_armor = new Armor("CLOTH ARMOR", "NONE", "LIGHT", 10, false);
+var chain_vest = new Armor("CHAIN VEST", "NONE", "HEAVY", 25, false);
+var robe = new Armor("ROBE", "NONE", "LIGHT", 10, false);
 
 var potion = new Item("Potion", "consumable", true);
 potion.setConsumeMessage("You used a " + potion.displayName);
