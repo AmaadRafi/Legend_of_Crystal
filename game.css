@@ -1,0 +1,40 @@
+#game{
+	height:300px;
+	margin-top:20px;
+	margin-bottom:10px;
+	background-image: url("rpg.png");
+	 border-radius: 15px;
+	border-style:outset;
+	border-width: 5px;
+	border-color:#f7e7ce;
+	box-shadow: 0px 0px 15px #f7e7ce;
+}
+
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body{
+	background-image: url("jungle.jpg");
+	background-size: cover;
+	}
+
+#code{
+	background-color:white;
+	height:200px;
+	border-style:outset;
+	border-radius: 15px;
+	border-width: 5px;
+	border-color:#f7e7ce;
+	box-shadow: 0px 0px 15px #f7e7ce;
+	opacity: 0.9;
+	
+}
+
+#nav{
+	background-color:#742f37;
+	text-align:center;
+	height: 40px;	
+}
