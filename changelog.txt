@@ -27,6 +27,6 @@ functionality with the inventory system is encapsulated by the
 
 9/14/19 - Jason burnell
 
-downloaded and committed codemirror.js and codemirror.css 
+Committed codemirror.js and codemirror.css to be used for the codeEditor in the game
 
 ===============================================================
