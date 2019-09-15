@@ -12,13 +12,24 @@ var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject.i
 
 var sword = new Weapon("Sword", "fire", "close", 150, false);
 var greatSword = new Weapon("Great Sword", "none", "close", 250, false);
+var shovel = new weapon("Shovel","none","close",50,false);//
 var dagger = new Weapon("Dagger", "none", "close", 100, false);
+var chainsaw = new Weapon("Chainsaw", "none", "close", 150, false);//
+var axe = new weapon("Axe","none","close",200,false);//
 var bow = new Weapon("Bow", "none", "ranged", 100, false);
 var gun = new Weapon("Gun", "none", "ranged", 200, false);
+var tomohawk = new weapon("Tomohawk","none","ranged",100,false);//
+var rock = new weapon("Rock","none","ranged",50,false);//
+var rocket = new weapon("Rocket","none","ranged",300,false);//
+var raygun = new weapon("raygun","lazer","magic",150,false);//
 var staff = new Weapon("Staff", "none", "magic", 300, false);
 var wand = new Weapon("Wand", "none", "magic", 200, false);
+var lightning_sword = new weapon("Lightningsword","none","magic",250,false);//
+
+
 
 var iceArmor = new Armor("Ice Armor", "ice", "heavy", 1, false);
+var sheild = new Armor("Shield","metal","heavy",1,"false");
 var waterRobe = new Armor("Water Robe", "water", "robe", 30, false);
 
 var potion = new Item("Potion", "consumable", true);
