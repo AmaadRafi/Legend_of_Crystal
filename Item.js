@@ -71,9 +71,6 @@ class Weapon extends Item {
         this.element = element.toUpperCase();
         this.weaponType = weaponType.toUpperCase();
         this.attackPower = attackPower;
-        
-        if(this.element != "NONE")
-            this.displayName = displayName + " (" + element.toLowerCase() + ")";
     }
     // throw an exception if incorrect input - Jason Allen 9/11/2019
     handleChildExceptions(element, weaponType, attackPower) {
@@ -108,9 +105,6 @@ class Armor extends Item{
         this.element = element.toUpperCase();
         this.armorType = armorType.toUpperCase();
         this.defenseValue = defenseValue;
-
-        if(this.element != "NONE")
-            this.displayName = displayName + " (" + element.toLowerCase() + ")";
     }
     // throw an exception if incorrect input - Jason Allen 9/11/2019
     handleChildExceptions(element, armorType, defenseValue) {

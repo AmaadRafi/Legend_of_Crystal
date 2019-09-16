@@ -25,7 +25,7 @@ class Party {
             case this.ranger.heroType:
                 return this.ranger;
             default:
-                alertHeroNotFound(heroName);
+                this.alertHeroNotFound(heroName);
         }
     }
     changeWeapon(heroType, weapon){
@@ -44,6 +44,47 @@ class Party {
         hero.use(item, this.inventory);
     }
     alertHeroNotFound(heroName){
-        console.log(heroName + " not found"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
+        alert(heroName + " not found"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
+    }
+}
+class BattleParty{
+
+    constructor(warrior, mage, ranger, inventory){
+        this.warrior = warrior;
+        this.mage = mage;
+        this.ranger = ranger;
+        this.inventory = inventory;
+    }
+    selectHero(heroType){
+
+        var heroName = heroType.toUpperCase();
+
+        switch (heroName) {
+            case this.warrior.heroType:
+                return this.warrior;
+            case this.mage.heroType:
+                return this.mage;
+            case this.ranger.heroType:
+                return this.ranger;
+            default:
+                this.alertHeroNotFound(heroName);
+        }
+    }
+    attack(enemy, hero){
+
+        if(hero.actionThisTurn == false){
+            
+            hero.actionThisTurn = true;
+            hero.attack(enemy);
+            console.log(hero.name + " attacked " + enemy.name);
+        }
+        else{
+            console.log(hero.name + " may only move once per turn");
+        }
+    }
+    resetStates(){
+        this.warrior.actionThisTurn = false;
+        this.mage.actionThisTurn = false;
+        this.ranger.actionThisTurn = false;
     }
 }
