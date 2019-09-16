@@ -1,8 +1,7 @@
 #game{
-	height:300px;
+	height:350px;
 	margin-top:20px;
-	margin-bottom:10px;
-	margin-left:100px;
+	margin: 0 auto;
 	width:1000px;
 	background-image: url("rpg.png");
 	border-radius: 15px;
@@ -26,7 +25,7 @@ body{
 #code{
 	background-color:white;
 	height:200px;
-	margin-left:100px;
+	margin: 0 auto;
 	width:1000px;
 	border-style:outset;
 	border-radius: 15px;
