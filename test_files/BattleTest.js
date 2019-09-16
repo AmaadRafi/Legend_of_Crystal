@@ -19,15 +19,19 @@ var ogre = new Enemy("ogre", 1000, sword, armor);
 
 function battle(){
 
-    for(var turn = 1; turn <= 11; turn++){
+    party.warrior.debugPrintHeroStats();
+    ogre.debugPrintEnemyStats();
+    
+    for(var turn = 1; turn <= 10; turn++){
         
-        party.warrior.debugPrintHeroStats();
-        ogre.debugPrintEnemyStats();
+        console.log("current turn: " + turn);
 
         var cm = document.querySelector('.CodeMirror').CodeMirror;
         eval(cm.getValue()); // eval() pastes code from the user into this spot.
         ogre.attack(party.warrior);
 
+        party.warrior.debugPrintHeroStats();
+        ogre.debugPrintEnemyStats();
         party.resetStates();
     }
 }
