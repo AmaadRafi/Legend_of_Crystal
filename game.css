@@ -2,8 +2,10 @@
 	height:300px;
 	margin-top:20px;
 	margin-bottom:10px;
+	margin-left:100px;
+	width:1000px;
 	background-image: url("rpg.png");
-	 border-radius: 15px;
+	border-radius: 15px;
 	border-style:outset;
 	border-width: 5px;
 	border-color:#f7e7ce;
@@ -24,6 +26,8 @@ body{
 #code{
 	background-color:white;
 	height:200px;
+	margin-left:100px;
+	width:1000px;
 	border-style:outset;
 	border-radius: 15px;
 	border-width: 5px;
