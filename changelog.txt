@@ -30,3 +30,25 @@ functionality with the inventory system is encapsulated by the
 Committed codemirror.js and codemirror.css to be used for the codeEditor in the game
 
 ===============================================================
+
+9/15/19 - Jason Allen
+
+Added CacheHandler for saving and retrieving objects from local storage
+
+Added enemy class
+
+Added CodeEditor script for text editor
+
+Added test files
+
+===============================================================
+
+9/16/19 - Amaad Rafi
+
+Added code injection for user interaction system
+
+===============================================================
+
+
+
+

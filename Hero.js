@@ -22,40 +22,26 @@ class Hero {
         this.defenseModifier = defenseModifier;
         this.weapon = null;
         this.armor = null;
+        this.actionThisTurn = false;
     }
     /* toDo create attack function 
     
-    calculated damage will be enemyDefense - (weaponStrength * attackModifier); 
+    calculated damage will be enemyDefense - (weaponStrength * attackModifier);
 
     Jason Allen 9/11/2019
     */
-
-    attack () {
-        return this.weapon.attackPower * this.attackModifier;
-    } /* DONE
-
-    changed return value to weapon.attackPower * attackModifier.
-    We can calculate damage taken by the monster in a seperate monster class. If we even go the damage route.
-
-    Amaad Rafi 9/15/2019
-    */
-
+    attack(enemy){
+        enemy.hitpoints -= this.weapon.attackPower;
+    }
     /* toDo create takeDamage function 
     
     calculated damage will be damageAmount - (armorValue * defensemodifier);
 
     Jason Allen 9/11/2019
     */
+    takeDamage(){ 
 
-    takeDamage(incomingDmg){ 
-        return incomingDmg - (this.armor.defenseValue * this.defenseModifier);
-    } /* DONE
-    
-    not sure if u wanna change HP here or just return a num, easy change once we figure out what direction we're going.
-
-    Amaad Rafi 9/15/2019
-    */
-
+    }
     /*================================== use =====================================
     Uses an item specified by the user.  Item argument must be of type 'string'.
     The inventory array is searched for the item, and it is deleted from the
@@ -102,6 +88,7 @@ class Hero {
                 var oldWeapon = this.weapon;
                 this.weapon = inventoryItem;
                 inventory[inventoryItemIndex] = oldWeapon;
+                this.alertEquippedItem(this.weapon.displayName);
             }
         }
     }
@@ -125,6 +112,7 @@ class Hero {
                 var oldArmor= this.armor;
                 this.armor = inventoryItem;
                 inventory[inventoryItemIndex] = oldArmor;
+                this.alertEquippedItem(this.armor.displayName);
             }
     }
 }
@@ -157,6 +145,9 @@ class Hero {
     alertUsedItem(thisItem){
         console.log("you used a " + thisItem + "\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
+    alertEquippedItem(thisItem){
+        console.log(this.name + " equipped " + thisItem);
+    }
     alertCannotEquip(thisItem, heroType){
         console.log(thisItem + " cannot be equppied by " + heroType); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
@@ -185,7 +176,7 @@ class HeroWarrior extends Hero{
         this.armor = defaultWarClothes;
     }
     
-    /*================================== getFromCache =====================================
+    /*================================== createFromCache =====================================
     retrieves saved hero data from window.localStorage, and parses it into a new identical
     hero object.  It is necessary to create a new object because JSON does not include
     function definitions when it converts a class to a string via stringify().  For the same
@@ -193,7 +184,7 @@ class HeroWarrior extends Hero{
 
     Jason Allen 9/14/2019
     */
-    static getFromCache(heroData) {
+    static createFromCache(heroData) {
         var heroObject = Object.assign(new HeroWarrior(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
@@ -219,12 +210,12 @@ class HeroMage extends Hero{
         this.armor = defaultMageClothes;
     }
     
-    /*================================== getFromCache =====================================
+    /*================================== createFromCache =====================================
     see above
 
     Jason Allen 9/14/2019
     */
-    static getFromCache(heroData) {
+    static createFromCache(heroData) {
         var heroObject = Object.assign(new HeroMage(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
@@ -250,46 +241,12 @@ class HeroRanger extends Hero{
         this.armor = defaultRangeClothes;
     }
     
-    /*================================== getFromCache =====================================
+    /*================================== createFromCache =====================================
     see above
 
     Jason Allen 9/14/2019
     */
-    static getFromCache(heroData) {
-        var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
-
-        heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
-            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
-
-        heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
-            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
-
-        return heroObject;
-    }
-}
-
-class HeroBrawler extends Hero{
-
-    constructor(name) {
-        super(name);
-        this.name = name + " the Brawler";
-        this.heroType = "BRAWLER";
-        this.allowedWeaponType = "MELEE";
-        this.allowedArmorType = "HEAVY";
-
-        var defaultBrawlerWeapon = new Weapon("GLOVES", "NONE", "MELEE", 10, false);
-        var defaultBrawlerClothes = new Armor("CLOTHES", "NONE", "LIGHT", 1, false);
-        
-        this.weapon = defaultBrawlerWeapon;
-        this.armor = defaultBrawlerClothes;
-    }
-    
-    /*================================== getFromCache =====================================
-    see above
-
-    Jason Allen 9/14/2019
-    */
-    static getFromCache(heroData) {
+    static createFromCache(heroData) {
         var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 

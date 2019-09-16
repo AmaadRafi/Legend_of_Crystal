@@ -1,3 +1,9 @@
+/* Jason Allen 9/14/2019 10:47 PM.
+
+This script defines the inventory and defines 
+methods for the player to interact with it
+*/ 
+
 var inventorySize = 40;
 
 class Inventory{
@@ -60,7 +66,7 @@ class Inventory{
         }
         return -1;
     }
-    /*================================== getFromCache =====================================
+    /*================================== createFromCache =====================================
     retrieves saved inventory data from window.localStorage, and parses it into a new identical
     inventory object.  It is necessary to create a new object because JSON does not include
     function definitions when it converts a class to a string via stringify().  It also isn't
@@ -68,7 +74,7 @@ class Inventory{
 
     Jason Allen 9/14/2019
     */
-    static getFromCache(inventoryData) {
+    static createFromCache(inventoryData) {
         
         var InventoryObject = Object.assign(new Inventory(), JSON.parse(inventoryData));
 
