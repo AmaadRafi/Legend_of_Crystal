@@ -16,4 +16,18 @@ class Enemy {
         this.attack = attack;
         this.defense = defense;
     }
+
+
+/*Attack method - Toby */
+attack () {
+    return this.attack;
+}
+
+/*Damage taking method - Toby*/
+
+takeDamage(incomingDmg){
+    return incomingDmg - this.defense;
+}
+
+
 }
