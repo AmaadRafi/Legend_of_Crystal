@@ -1,8 +1,6 @@
 #game{
-	height:350px;
-	margin-top:20px;
-	margin: 0 auto;
-	width:1000px;
+	width: 66%;
+	padding-top: 33%;
 	background-image: url("rpg.png");
 	border-radius: 15px;
 	border-style:outset;
@@ -24,9 +22,8 @@ body{
 
 #code{
 	background-color:white;
-	height:200px;
-	margin: 0 auto;
-	width:1000px;
+	width: 66%;
+	padding-top: 20%;
 	border-style:outset;
 	border-radius: 15px;
 	border-width: 5px;
