@@ -1,6 +1,6 @@
 #game{
 	width: 66%;
-	padding-top: 33%;
+	padding-top: 25%;
 	background-image: url("rpg.png");
 	border-radius: 15px;
 	border-style:outset;
@@ -23,7 +23,7 @@ body{
 #code{
 	background-color:white;
 	width: 66%;
-	padding-top: 20%;
+	padding-top: 18%;
 	border-style:outset;
 	border-radius: 15px;
 	border-width: 5px;
@@ -33,8 +33,3 @@ body{
 	
 }
 
-#nav{
-	background-color:#742f37;
-	text-align:center;
-	height: 40px;	
-}
