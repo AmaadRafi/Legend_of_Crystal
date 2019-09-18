@@ -171,7 +171,7 @@ class HeroWarrior extends Hero{
         this.allowedWeaponType = "CLOSE";
         this.allowedArmorType = "HEAVY";
         var defaultWarWeapon = new Weapon("Sword", "none", "close", 10, false);
-        var defaultWarClothes = new Armor("Clothes", "none", "heavy", 1, false);
+        var defaultWarClothes = new Armor("Warrior Clothes", "none", "heavy", 1, false);
         this.weapon = defaultWarWeapon;
         this.armor = defaultWarClothes;
     }
@@ -205,7 +205,7 @@ class HeroMage extends Hero{
         this.allowedWeaponType = "MAGIC";
         this.allowedArmorType = "ROBE";
         var defaultMageWeapon = new Weapon("Wand", "none", "magic", 10, false);
-        var defaultMageClothes = new Armor("Clothes", "none", "robe", 1, false);
+        var defaultMageClothes = new Armor("Mage Clothes", "none", "robe", 1, false);
         this.weapon = defaultMageWeapon;
         this.armor = defaultMageClothes;
     }
@@ -236,6 +236,36 @@ class HeroRanger extends Hero{
         this.allowedWeaponType = "RANGED";
         this.allowedArmorType = "LIGHT";
         var defaultRangeWeapon = new Weapon("Bow", "none", "ranged", 10, false);
+        var defaultRangeClothes = new Armor("Ranger Clothes", "none", "light", 1, false);
+        this.weapon = defaultRangeWeapon;
+        this.armor = defaultRangeClothes;
+    }
+    
+    /*================================== createFromCache =====================================
+    see above
+
+    Jason Allen 9/14/2019
+    */
+    static createFromCache(heroData) {
+        var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
+
+        heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+
+        heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
+            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
+
+        return heroObject;
+    }
+}
+class HeroSavior extends Hero{
+    constructor(name) {
+        super(name);
+        this.name = "Sonaht"
+        this.heroType = "SAVIOR";
+        this.allowedWeaponType = "GAUNLET";
+        this.allowedArmorType = "NONE";
+        var defaultRangeWeapon = new Weapon("Empty Gauntlet", "none", "gauntlet", 1, false);
         var defaultRangeClothes = new Armor("Clothes", "none", "light", 1, false);
         this.weapon = defaultRangeWeapon;
         this.armor = defaultRangeClothes;
