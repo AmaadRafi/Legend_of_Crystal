@@ -19,7 +19,7 @@ how each challenge with each enemies will go, etc.
 ================================= frontend ================================
 1.  Create the characters and items that will be found in the game
 
-2.  Create the game world and areas in html
+2.  Create the game world and areas in html COMPLETE
 
 3.  Write the story board/end goal of the game
 

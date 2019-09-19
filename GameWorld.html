@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Website Title</title>
+<link rel='stylesheet' href='game.css'>
+<link rel="stylesheet" href="libs/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="libs/codemirror/theme/lucario.css">
+<script type="text/javascript" src="libs/codemirror/lib/codemirror.js"></script>
+<script type="text/javascript" src="libs/codemirror/addon/edit/closebrackets.js"></script>
+<script type="text/javascript" src="libs/codemirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="scripts/MusicPlayer.js"></script>
+<script type="text/javascript" src="scripts/CodeEditor.js"></script>
+<script type="text/javascript" src="scripts/Hero.js"></script>
+<script type="text/javascript" src="scripts/Item.js"></script>
+<script type="text/javascript" src="scripts/Inventory.js"></script>
+<script type="text/javascript" src="scripts/CacheHandler.js"></script>
+<script type="text/javascript" src="scripts/Party.js"></script>
+<script type="text/javascript" src="scripts/StartScreen.js"></script>
+</head>
+
+<body>
+    <script>
+        window.oninput = function(){
+
+        if(document.getElementById("MusicPlayer") == null){
+
+            var musicPlayer = new MusicPlayer("sounds/Remotest-Library.mp3"); 
+            musicPlayer.play();
+        }
+    }
+    </script>
+    <div id ="leftScreen">
+        <img id ="map" src="images/map.png">
+        <div id="codeBox">
+                <textarea name="Code" id="code">createParty("Jay", "Amaad", "Shabir");</textarea>
+        </div>
+        <div id="buttonContainer">
+        <button id="apply" onclick="addScript()">Apply</button>
+        <button id="reset" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    <div id ="rightScreen">
+        <div id="output">Output</div>
+        <div id="console"></div>  
+    </div>
+
+    <script type="text/javascript" src="Logger.js"></script>
+</body>
+</html>

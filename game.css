@@ -1,35 +1,82 @@
-#game{
-	width: 66%;
-	padding-top: 25%;
-	background-image: url("rpg.png");
-	border-radius: 15px;
-	border-style:outset;
-	border-width: 5px;
-	border-color:#f7e7ce;
-	box-shadow: 0px 0px 15px #f7e7ce;
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+    padding: 0;
+	overflow: hidden;
 }
-
-
-img {
+#leftScreen{
+	position: absolute;
+	width: 66%;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+}
+#map{
+	position: absolute;
+	width: 100%;
+	height: 60%;
     max-width: 100%;
-    max-height: 100%;
+	max-height: 100%;
+	object-fit: fill;
 }
-
-body{
-	background-image: url("images/jungle.jpg");
-	background-size: cover;
-	}
-
-#code{
-	background-color:white;
-	width: 66%;
-	padding-top: 18%;
-	border-style:outset;
-	border-radius: 15px;
-	border-width: 5px;
-	border-color:#f7e7ce;
-	box-shadow: 0px 0px 15px #f7e7ce;
-	opacity: 0.9;
-	
+#codeBox{
+	position: absolute;
+	width: 70%;
+	height: 40%;
+	top: 60%;
+}
+#buttonContainer{
+	background-color:NavajoWhite;
+	position: absolute;
+	height: 40%;
+	width: 30%;
+	top: 60%;
+	right: 0%;
+}
+button {
+	position: absolute;
+	background-color: #1E3E59;
+	border: none;
+	color: white;
+	padding: 12px 28px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+#apply{
+	position: absolute;
+	right: 55%;
+	top: 50%;
+}
+#reset{
+	position: absolute;
+	left: 55%;
+	top: 50%;
+}
+#rightScreen{
+	position: absolute;
+	width: 34%;
+	height: 100%;
+	right: 0%;
+	top: 0%;
+}
+#console{
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 50%;
+	overflow: scroll;
+	padding-left: 10px;
+	padding-top: 20px;
+}
+#output{
+	background-color:NavajoWhite;
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	padding-left: 10px;
+	padding-top: 10px;
 }
 

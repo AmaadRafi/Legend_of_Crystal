@@ -49,6 +49,14 @@ Added code injection for user interaction system
 
 ===============================================================
 
+9/19/19 - Jason Allen
+
+Added MusicPlayer.js for in game sounds.  Added Logger.js to display
+output from console to the game screen.  Added game layout and 
+interface (GameWorld.html).  Tidying/organizing.
+
+===============================================================
+
 
 
 
