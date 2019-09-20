@@ -5,16 +5,33 @@
 <link rel='stylesheet' href='game.css'>
 
 </style>
+<style type="text/css">
+  body {
+      background-color: #FFF;
+      margin: 30px;
+      margin-top: 10px;
+  }
+ 
+  #theboy {
+      position: relative;
+      left: 50px;
+      top: 50px;
+      transition: left 1s ease, top 1s ease;
+  }
+  </style>
 </head>
 
-<script src='test.js'></script>
+
 
 <body>
 	
-    <div id="game" class="game">this is where the game is displayed:</div>
+    <div id="game" class="game">this is where the game is displayed:
+      <div><img id="theboy" src="//cdn.discordapp.com/attachments/579300523191042059/624025795165290523/fighter.png"></div>
+    </div>
     <div id="code" class="code">this is where the code is entered:
 		<input type="text" id="userinput" />
 	</div>
 
 </body>
+<script src='animationtest.js'></script>
 </html>
