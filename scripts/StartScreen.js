@@ -17,6 +17,6 @@ function createParty(warriorName, mageName, rangerName){
  
        CacheHandler.addToCache(warrior, mage, ranger, inventory);
  
-       window.location.href = "SandBox.html";
+       window.location.href = "GameWorld.html";
     }
  }

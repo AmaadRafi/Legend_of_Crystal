@@ -18,11 +18,10 @@ class Hero {
         this.allowedWeaponType = null;
         this.allowedArmorType = null;
         this.hitpoints = hitpoints;
-        this.attackModifier = attackModifier;
-        this.defenseModifier = defenseModifier;
         this.weapon = null;
         this.armor = null;
         this.actionThisTurn = false;
+        this.isInvulnerable = false;
     }
     /* toDo create attack function 
     
@@ -31,6 +30,7 @@ class Hero {
     Jason Allen 9/11/2019
     */
     attack(enemy){
+        if(!enemy.isInvulnerable)
         enemy.hitpoints -= this.weapon.attackPower;
     }
     /* toDo create takeDamage function 
@@ -170,8 +170,8 @@ class HeroWarrior extends Hero{
         this.heroType = "WARRIOR";
         this.allowedWeaponType = "CLOSE";
         this.allowedArmorType = "HEAVY";
-        var defaultWarWeapon = new Weapon("Sword", "none", "close", 10, false);
-        var defaultWarClothes = new Armor("Warrior Clothes", "none", "heavy", 1, false);
+        var defaultWarWeapon = new Weapon("Sword", "none", "close", 100, false);
+        var defaultWarClothes = new Armor("Warrior Clothes", "none", "heavy", 100, false);
         this.weapon = defaultWarWeapon;
         this.armor = defaultWarClothes;
     }
@@ -204,8 +204,8 @@ class HeroMage extends Hero{
         this.heroType = "MAGE";
         this.allowedWeaponType = "MAGIC";
         this.allowedArmorType = "ROBE";
-        var defaultMageWeapon = new Weapon("Wand", "none", "magic", 10, false);
-        var defaultMageClothes = new Armor("Mage Clothes", "none", "robe", 1, false);
+        var defaultMageWeapon = new Weapon("Wand", "none", "magic", 100, false);
+        var defaultMageClothes = new Armor("Mage Clothes", "none", "robe", 100, false);
         this.weapon = defaultMageWeapon;
         this.armor = defaultMageClothes;
     }
@@ -235,8 +235,8 @@ class HeroRanger extends Hero{
         this.heroType = "RANGER";
         this.allowedWeaponType = "RANGED";
         this.allowedArmorType = "LIGHT";
-        var defaultRangeWeapon = new Weapon("Bow", "none", "ranged", 10, false);
-        var defaultRangeClothes = new Armor("Ranger Clothes", "none", "light", 1, false);
+        var defaultRangeWeapon = new Weapon("Bow", "none", "ranged", 100, false);
+        var defaultRangeClothes = new Armor("Ranger Clothes", "none", "light", 100, false);
         this.weapon = defaultRangeWeapon;
         this.armor = defaultRangeClothes;
     }

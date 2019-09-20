@@ -79,4 +79,9 @@ button {
 	padding-left: 10px;
 	padding-top: 10px;
 }
+.centered{
+	position: absolute;
+	top: 50%;
+	left: 30%;
+}
 

@@ -49,11 +49,12 @@ class Party {
 }
 class BattleParty{
 
-    constructor(warrior, mage, ranger, inventory){
+    constructor(warrior, mage, ranger, inventory, currentEnemy){
         this.warrior = warrior;
         this.mage = mage;
         this.ranger = ranger;
         this.inventory = inventory;
+        this.currentEnemy = currentEnemy;
     }
     selectHero(heroType){
 
@@ -70,16 +71,24 @@ class BattleParty{
                 this.alertHeroNotFound(heroName);
         }
     }
-    attack(enemy, hero){
+    attack(enemyName, heroType){
 
-        if(hero.actionThisTurn == false){
-            
-            hero.actionThisTurn = true;
-            hero.attack(enemy);
-            console.log(hero.name + " attacked " + enemy.name);
+        var hero = this.selectHero(heroType);
+        enemyName = enemyName.toUpperCase();
+        
+        if(enemyName == this.currentEnemy.name){
+            if(hero.actionThisTurn == false){
+                
+                hero.actionThisTurn = true;
+                hero.attack(this.currentEnemy);
+                console.log(hero.name + " attacked " + this.currentEnemy.displayName);
+            }
+            else{
+                console.log(hero.name + " may only move once per turn");
+            }
         }
         else{
-            console.log(hero.name + " may only move once per turn");
+            console.log(enemyName + " is not the current enemy.  Try again.");
         }
     }
     resetStates(){
