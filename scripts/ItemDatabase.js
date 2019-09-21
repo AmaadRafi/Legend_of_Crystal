@@ -1,10 +1,5 @@
 /* Item Database
 */ 
-var warriorObject = HeroWarrior.getFromCache(window.localStorage.getItem('warrior'));
-var mageObject = HeroMage.getFromCache(window.localStorage.getItem('mage'));
-var rangerObject = HeroRanger.getFromCache(window.localStorage.getItem('ranger'));
-var inventoryObject = Inventory.getFromCache(window.localStorage.getItem('Inventory'));
-var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject.inventory);
 
 /* Warrior */
 var sword = new Weapon("Sword", "none", "close", 100, false);

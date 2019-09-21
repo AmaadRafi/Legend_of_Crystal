@@ -164,14 +164,14 @@ class Hero {
 }
 class HeroWarrior extends Hero{
     
-    constructor(name, inventory) {
+    constructor(name) {
         super(name);
         this.name = name + " the Warrior";
         this.heroType = "WARRIOR";
         this.allowedWeaponType = "CLOSE";
         this.allowedArmorType = "HEAVY";
-        var defaultWarWeapon = new Weapon("Sword", "none", "close", 100, false);
-        var defaultWarClothes = new Armor("Warrior Clothes", "none", "heavy", 100, false);
+        var defaultWarWeapon = new Weapon("Sword", "none", "close", 100, false, "images/weapons/Heavy_Sword.png");
+        var defaultWarClothes = new Armor("Warrior Clothes", "none", "heavy", 100, false, "");
         this.weapon = defaultWarWeapon;
         this.armor = defaultWarClothes;
     }
@@ -188,10 +188,12 @@ class HeroWarrior extends Hero{
         var heroObject = Object.assign(new HeroWarrior(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
-            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, 
+            heroObject.weapon.isConsumable, heroObject.weapon.imageSource);
 
         heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
-            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
+            heroObject.armor.armorType, heroObject.armor.defenseValue, 
+            heroObject.armor.isConsumable, heroObject.armor.imageSource);
 
         return heroObject;
     }
@@ -204,8 +206,8 @@ class HeroMage extends Hero{
         this.heroType = "MAGE";
         this.allowedWeaponType = "MAGIC";
         this.allowedArmorType = "ROBE";
-        var defaultMageWeapon = new Weapon("Wand", "none", "magic", 100, false);
-        var defaultMageClothes = new Armor("Mage Clothes", "none", "robe", 100, false);
+        var defaultMageWeapon = new Weapon("Wand", "none", "magic", 100, false, "images/weapons/Ice_Staff.png");
+        var defaultMageClothes = new Armor("Mage Clothes", "none", "robe", 100, false, "");
         this.weapon = defaultMageWeapon;
         this.armor = defaultMageClothes;
     }
@@ -219,10 +221,12 @@ class HeroMage extends Hero{
         var heroObject = Object.assign(new HeroMage(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
-            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, 
+            heroObject.weapon.isConsumable, heroObject.weapon.imageSource);
 
         heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
-            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
+            heroObject.armor.armorType, heroObject.armor.defenseValue, 
+            heroObject.armor.isConsumable, heroObject.armor.imageSource);
 
         return heroObject;
     }
@@ -235,8 +239,8 @@ class HeroRanger extends Hero{
         this.heroType = "RANGER";
         this.allowedWeaponType = "RANGED";
         this.allowedArmorType = "LIGHT";
-        var defaultRangeWeapon = new Weapon("Bow", "none", "ranged", 100, false);
-        var defaultRangeClothes = new Armor("Ranger Clothes", "none", "light", 100, false);
+        var defaultRangeWeapon = new Weapon("Bow", "none", "ranged", 100, false, "images/weapons/Bow.png");
+        var defaultRangeClothes = new Armor("Ranger Clothes", "none", "light", 100, false, "");
         this.weapon = defaultRangeWeapon;
         this.armor = defaultRangeClothes;
     }
@@ -250,7 +254,7 @@ class HeroRanger extends Hero{
         var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
-            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable,);
 
         heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
             heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
@@ -280,10 +284,12 @@ class HeroSavior extends Hero{
         var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
-            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable);
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, 
+            heroObject.weapon.isConsumable, heroObject.weapon.imageSource);
 
         heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
-            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
+            heroObject.armor.armorType, heroObject.armor.defenseValue, 
+            heroObject.armor.isConsumable, heroObject.armor.imageSource);
 
         return heroObject;
     }

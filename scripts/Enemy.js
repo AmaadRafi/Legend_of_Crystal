@@ -5,7 +5,7 @@ be found in the game.
 */ 
 
 class Enemy {
-    constructor(name, hitpoints, weapon, armor) {
+    constructor(name, hitpoints, weapon, armor, treasureChest) {
         this.name = name.toUpperCase();
         this.displayName = name;
         this.heroType = null;
@@ -13,6 +13,7 @@ class Enemy {
         this.weapon = weapon;
         this.armor = armor;
         this.isInvulnerable = false;
+        this.treasureChest = treasureChest;
     }
     attack(playerCharacter){
         if(!playerCharacter.isInvulnerable)

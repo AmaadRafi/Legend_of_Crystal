@@ -55,6 +55,11 @@ button {
 	left: 55%;
 	top: 50%;
 }
+#startBattle{
+	position: absolute;
+	top: 20%;
+	left: 32%;
+}
 #rightScreen{
 	position: absolute;
 	width: 34%;
@@ -83,5 +88,10 @@ button {
 	position: absolute;
 	top: 50%;
 	left: 30%;
+}
+.inventoryImage{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
 }
 

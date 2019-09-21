@@ -25,6 +25,7 @@ class Inventory{
 
             if(this.inventory[i] == null){
                 this.inventory[i] = thisItem;
+                this.alertItemPickedUp(thisItem.displayName);
                 return;
             }
         }
@@ -84,24 +85,35 @@ class Inventory{
          
             if(indexData != null){
                 if(indexData.type == "CONSUMABLE")
-                    InventoryObject.inventory[i] = new Item(InventoryObject.inventory[i].displayName, InventoryObject.inventory[i].type, InventoryObject.inventory[i].isConsumable);
+                    InventoryObject.inventory[i] = new Item(InventoryObject.inventory[i].displayName, 
+                        InventoryObject.inventory[i].type, InventoryObject.inventory[i].isConsumable, 
+                        InventoryObject.inventory[i].imageSource);
                 else if(indexData.type == "WEAPON")
-                    InventoryObject.inventory[i] = new Weapon(InventoryObject.inventory[i].displayName, InventoryObject.inventory[i].element, InventoryObject.inventory[i].weaponType, InventoryObject.inventory[i].attackPower, InventoryObject.inventory[i].isConsumable);
+                    InventoryObject.inventory[i] = new Weapon(InventoryObject.inventory[i].displayName, 
+                        InventoryObject.inventory[i].element, InventoryObject.inventory[i].weaponType, 
+                        InventoryObject.inventory[i].attackPower, InventoryObject.inventory[i].isConsumable, 
+                        InventoryObject.inventory[i].imageSource);
                 else if(indexData.type == "ARMOR")
-                    InventoryObject.inventory[i] = new Armor(InventoryObject.inventory[i].displayName, InventoryObject.inventory[i].element, InventoryObject.inventory[i].armorType, InventoryObject.inventory[i].defenseValue, InventoryObject.inventory[i].isConsumable);
+                    InventoryObject.inventory[i] = new Armor(InventoryObject.inventory[i].displayName, 
+                        InventoryObject.inventory[i].element, InventoryObject.inventory[i].armorType, 
+                        InventoryObject.inventory[i].defenseValue, InventoryObject.inventory[i].isConsumable,
+                        InventoryObject.inventory[i].imageSource);
             }
          }
 
         return InventoryObject;
     }
     alertInventoryFull(){
-        console.log("inventory full!\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
+        console.log("Inventory Full!\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
     alertItemNotFound(thisItem){
         console.log(thisItem + " not found."); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
+    alertItemPickedUp(thisItem){
+        console.log("You picked up a " + thisItem); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
+    }
     alertDroppedItem(thisItem){
-        console.log("you dropped a " + thisItem + "\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
+        console.log("You dropped a " + thisItem + "\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
     debugPrintInventory(){
         console.log(this.inventory.join());

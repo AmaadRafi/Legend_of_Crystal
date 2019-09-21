@@ -47,29 +47,11 @@ class Party {
         alert(heroName + " not found"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
 }
-class BattleParty{
+class BattleParty extends Party{
 
     constructor(warrior, mage, ranger, inventory, currentEnemy){
-        this.warrior = warrior;
-        this.mage = mage;
-        this.ranger = ranger;
-        this.inventory = inventory;
+        super(warrior, mage, ranger, inventory);
         this.currentEnemy = currentEnemy;
-    }
-    selectHero(heroType){
-
-        var heroName = heroType.toUpperCase();
-
-        switch (heroName) {
-            case this.warrior.heroType:
-                return this.warrior;
-            case this.mage.heroType:
-                return this.mage;
-            case this.ranger.heroType:
-                return this.ranger;
-            default:
-                this.alertHeroNotFound(heroName);
-        }
     }
     attack(enemyName, heroType){
 
@@ -89,6 +71,11 @@ class BattleParty{
         }
         else{
             console.log(enemyName + " is not the current enemy.  Try again.");
+        }
+    }
+    takeTreasure(){
+        for(var i = 0; i < currentEnemy.treasureChest.length; i++){
+            this.inventory.pickUp(currentEnemy.treasureChest[i]);
         }
     }
     resetStates(){

@@ -10,6 +10,7 @@
 <script type="text/javascript" src="libs/codemirror/lib/codemirror.js"></script>
 <script type="text/javascript" src="libs/codemirror/addon/edit/closebrackets.js"></script>
 <script type="text/javascript" src="libs/codemirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="scripts/ErrorHandler.js"></script>
 <script type="text/javascript" src="scripts/Modal.js"></script>
 <script type="text/javascript" src="scripts/MusicPlayer.js"></script>
 <script type="text/javascript" src="scripts/CodeEditor.js"></script>
@@ -24,12 +25,13 @@
 
 <body>
     <script>
-        window.oninput = function(){
+        window.onmousedown = function(){
 
         if(document.getElementById("MusicPlayer") == null){
 
-            var musicPlayer = new MusicPlayer("sounds/Remotest-Library.mp3"); 
+            var musicPlayer = new MusicPlayer("sounds/Battle-RPGmaker_SFC2bgm07.mp3"); 
             musicPlayer.play();
+            document.getElementById("MusicPlayer").loop = true;
         }
     }
     </script>
@@ -39,9 +41,9 @@
         <div id="codeBox">
             <textarea name="Code" id="code">var pillars = 5;
 
-                party.attack("ogre", "warrior");
-                party.attack("ogre", "mage");
-                party.attack("ogre", "ranger");</textarea>
+party.attack("ogre", "warrior");
+party.attack("ogre", "mage");
+party.attack("ogre", "ranger");</textarea>
         </div>
         <div id="buttonContainer">
         <button id="apply" onclick="battleEarth()">Apply</button>

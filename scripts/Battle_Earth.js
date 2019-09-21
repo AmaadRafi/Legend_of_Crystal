@@ -1,12 +1,25 @@
+/* Jason Allen 9/21/19 12:50 AM 
+
+Script for the earth battle.  Most
+likely will be incorporated into a
+single Battle.js script
+*/
+
+
 var warriorObject = CacheHandler.getFromCache("warrior");
 var mageObject = CacheHandler.getFromCache("mage");
 var rangerObject = CacheHandler.getFromCache("ranger");
 var inventoryObject = CacheHandler.getFromCache("inventory");
 
-var sword = new Weapon("Ogre Sword", "fire", "close", 100, false);
-var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false);
-var earthEnemy = new Enemy("ogre", 300, sword, armor);
+var sword = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
+var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
+var earthStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
+var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
+potion.setConsumeMessage("You used a " + potion.displayName);
+var earthEnemy = new Enemy("Ogre", 300, sword, armor, [sword, potion, earthStone]);
 
+var currentEnemy = null;
+var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
 
@@ -18,15 +31,18 @@ function battleEarth(){
     if(!bossIsAlive){
         return;
     }
-
+    
     var party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, earthEnemy);
-    party.warrior.debugPrintHeroStats();
-    earthEnemy.debugPrintEnemyStats();
+    currentParty = party;
+    currentEnemy = earthEnemy;
 
     var taskCompleted = false;
       
     var cm = document.querySelector('.CodeMirror').CodeMirror;
     eval(cm.getValue()); // eval() pastes code from the user into this spot.
+
+    party.warrior.debugPrintHeroStats();
+    earthEnemy.debugPrintEnemyStats();
     
     try {
         
@@ -59,7 +75,15 @@ function win(){
 
     bossIsAlive = false;
 
-    CacheHandler.addToCache(warriorObject, mageObject, rangerObject, inventoryObject);
+    var popup = document.getElementById("popup");
+
+    popup.innerHTML += "<h1 class='modalWin'>" + currentEnemy.displayName + " was defeated! </h1>";
+    popup.innerHTML += "<h3 class='modalSubtext'>The following items were dropped: <h3>";
+    drawTreasureBoxes(popup);
+
+    currentParty.takeTreasure();
+    CacheHandler.addToCache(currentParty.warrior, currentParty.mage, currentParty.ranger, currentParty.inventory);
+    playOutcomeSound("sounds/Victory.mp3");
     showOverlay();
 }
 function lose(){
@@ -67,10 +91,35 @@ function lose(){
     partyIsAlive = false;
 
     var popup = document.getElementById("popup");
-    var consoleOutput = document.getElementById("console");
     
-    popup.innerHTML += "<h1>You Lose!</h1>";
+    popup.innerHTML += "<h1 class='modalLose'>GAME OVER</h1>";
+    playOutcomeSound("sounds/Defeat.mp3");
     showOverlay();
+}
+function drawTreasureBoxes(popup){
+    
+    var treasureBoxClass;
+    var firstImagePosition = 40;
+    var offset = 30;
+
+    if(currentEnemy.treasureChest.length > 3){
+        treasureBoxClass = "treasureBoxSmall";
+        offset = 15;
+    }
+    else
+        treasureBoxClass = "treasureBox";
+
+    for(var i = 0; i < currentEnemy.treasureChest.length; i++){
+        
+        if(i > 0){
+            if(i % 2 != 0)
+                firstImagePosition += offset * i;
+            else
+                firstImagePosition -= offset * i;
+        }
+        popup.innerHTML += "<div class="+treasureBoxClass+" style='left: "+firstImagePosition+"%;'>"
+        +"<img class='inventoryImage' src="+currentEnemy.treasureChest[i].imageSource+"></div>";
+    }
 }
 function showOverlay(){
     
@@ -84,11 +133,21 @@ function stateChange(){
         window.location.href = "GameWorld.html";
     }
     else{
-        location.reload();
+        window.location.reload();
     }
 }
 function viewLog(){
     $('.overlay').hide();
     var buttonContainer = document.getElementById("buttonContainer");
     buttonContainer.innerHTML = '<button class="centered" onclick="stateChange()">Continue</button>';
+}
+function playVictorySound(){
+    document.getElementById("MusicPlayer").outerHTML = "";
+    var musicPlayer = new MusicPlayer("sounds/Victory.mp3"); 
+    musicPlayer.play();
+}
+function playOutcomeSound(outcomeSound){
+    document.getElementById("MusicPlayer").outerHTML = "";
+    var musicPlayer = new MusicPlayer(outcomeSound); 
+    musicPlayer.play();
 }
