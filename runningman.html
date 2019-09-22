@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Running in place</title> 
+        <style> 
+        #canvas{
+            outline:1px solid #19be13; 
+            background-image: url("map.png");
+            background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="canvas" width = "800" height = "500"> </canvas>
+        
+        <script>
+        
+        var canvas = document.querySelector('#canvas');
+
+        var context= canvas.getContext('2d');
+        var runnerImage = new Image();
+        runnerImage.src = 'character.png';
+        runnerImage.addEventListener('load',draw,false);
+       
+        
+
+            //runner class
+        var Runner = {
+            sx: 0,
+            sy: 0,
+            dx: 0,
+            dy: 0,
+            spriteW: 0,
+            spriteH: 0,
+            w: 0,
+            h: 0,
+            frames: 1,
+            cols: 1,
+            currentFrame: 0,
+            speedX: 0,
+            speedY: 0,
+
+            updateFrames: function() {
+                this.sx = Math.floor(this.currentFrame % this.cols) * this.spriteW;// make it move over one column 
+                this.sy = Math.floor(this.currentFrame / this.cols) * this.spriteH;//make it move down one row
+                this.currentFrame = (this.currentFrame+40) % this.frames;
+                context.fill();
+                context.clearRect(this.sx -100, this.sy -100,this.dx + 20,this.dy + 20);
+            },// end updateFrames
+       
+       
+            display: function(){
+                context.drawImage(
+                    runnerImage,
+                    this.sx, this.sy, this.spriteW, this.spriteH, // source coordinates
+                    this.dx, this.dy, this.w, this.h //destination coordinates
+                    
+                    )
+            } //end display
+        } //end runner
+
+
+        //instance of Runner class, creates the object
+        var runner = Object.create(Runner);
+        runner.sx = 0;
+        runner.sy = 0;
+        // starting location
+        runner.dx = Math.random()*300+100; 
+        runner.dy = Math.random()*200+100;
+        runner.spriteW = 39;
+        runner.spriteH = 40;
+        runner.w = 39;
+        runner.h = 40;
+        runner.frames = 27;
+        runner.cols = 5;
+    
+        
+        function draw() { 
+            runner.display();
+            runner.updateFrames();
+            window.requestAnimationFrame(draw);
+
+         
+           
+        }//end draw
+
+        // setInterval(function() {
+        //     draw()
+        // }, 20);
+        var timer;
+        function animateElement(){
+        timer = setInterval( function() {
+            // animation code goes here
+            draw()
+        } , -90000 );
+        }
+
+        // To stop the animation, use clearInterval
+        // function stopAnimation() {
+        // clearInterval(timer);
+        // }
+        // With setInterval
+
+        context.stroke();
+        function move(e){
+                
+                if(e.keyCode==39){
+                    runner.dx+=5;
+                    }          
+                //l. akey
+                if(e.keyCode==37) {
+                    runner.dx-=5;
+                    }
+                //up
+                if (e.keyCode == 38) {
+                     runner.dy-=5;
+                }
+                //down 
+                if (e.keyCode == 40){
+                     runner.dy+=5;
+                }
+                if(e.keyCode == 38){
+                     runner.dy-=5;
+                }
+                if(e.keyCode == 40){
+                     runner.dy+=5;
+                }
+                context.stroke();
+            } //end move
+        document.onkeydown = move;
+        </script> 
+    </body>
+</html>
