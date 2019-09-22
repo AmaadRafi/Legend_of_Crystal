@@ -18,16 +18,12 @@
         <script>
         
         var canvas = document.querySelector('#canvas');
-
         var context= canvas.getContext('2d');
         var runnerImage = new Image();
-            
-            
+        
         runnerImage.src = 'character.png'; // we can swap out for any sprite sheet
         runnerImage.addEventListener('load',draw,false);
-       
-        
-
+    
             //runner class
         var Runner = {
             sx: 0,
@@ -52,23 +48,20 @@
                 context.clearRect(this.sx -100, this.sy -100,this.dx + 20,this.dy + 20);
             },// end updateFrames
        
-       
-            display: function(){
+             display: function() {
                 context.drawImage(
-                    runnerImage,
-                    this.sx, this.sy, this.spriteW, this.spriteH, // source coordinates
-                    this.dx, this.dy, this.w, this.h //destination coordinates
-                    
-                    )
+                runnerImage,
+                this.sx, this.sy, this.spriteW, this.spriteH, // source coordinates
+                this.dx, this.dy, this.w, this.h //destination coordinates   
+                 )
             } //end display
         } //end runner
 
-
-        //instance of Runner class, creates the object
+            //instance of Runner class, creates the object
         var runner = Object.create(Runner);
         runner.sx = 0;
         runner.sy = 0;
-        // starting location (randomly appears on the screen, we can change to (0,0)
+            // starting location (randomly appears on the screen, we can change to (0,0)
         runner.dx = Math.random()*300+100; 
         runner.dy = Math.random()*200+100;
             //will have to adjust these depending on what sprite sheet we use
@@ -78,16 +71,12 @@
         runner.h = 40;
         runner.frames = 27;
         runner.cols = 5;
-    
-        
+  
         function draw() { 
             runner.display();
             runner.updateFrames();
             window.requestAnimationFrame(draw);
-
-         
-           
-        }//end draw
+            }//end draw
 
         // setInterval(function() {
         //     draw()
@@ -95,7 +84,6 @@
         var timer;
         function animateElement(){
         timer = setInterval( function() {
-            // animation code goes here
             draw()
         } , -90000 );
         }
@@ -104,8 +92,8 @@
         // function stopAnimation() {
         // clearInterval(timer);
         // }
-        // With setInterval
-
+ 
+              //moving object by arrowKeys
         context.stroke();
         function move(e){
                 
