@@ -21,7 +21,9 @@
 
         var context= canvas.getContext('2d');
         var runnerImage = new Image();
-        runnerImage.src = 'character.png';
+            
+            
+        runnerImage.src = 'character.png'; // we can swap out for any sprite sheet
         runnerImage.addEventListener('load',draw,false);
        
         
@@ -66,9 +68,10 @@
         var runner = Object.create(Runner);
         runner.sx = 0;
         runner.sy = 0;
-        // starting location
+        // starting location (randomly appears on the screen, we can change to (0,0)
         runner.dx = Math.random()*300+100; 
         runner.dy = Math.random()*200+100;
+            //will have to adjust these depending on what sprite sheet we use
         runner.spriteW = 39;
         runner.spriteH = 40;
         runner.w = 39;
