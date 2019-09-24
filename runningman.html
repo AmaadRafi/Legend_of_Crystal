@@ -78,15 +78,17 @@
             window.requestAnimationFrame(draw);
             }//end draw
 
-        // setInterval(function() {
-        //     draw()
-        // }, 20);
-        var timer;
-        function animateElement(){
-        timer = setInterval( function() {
+        setInterval(function() {
             draw()
-        } , -90000 );
-        }
+        }, 20);
+            
+            //tests(trying to smooth out the animation)
+//         var timer;
+//         function animateElement(){
+//         timer = setInterval( function() {
+//             draw()
+//         } , -90000 );
+//         }
 
         // To stop the animation, use clearInterval
         // function stopAnimation() {
