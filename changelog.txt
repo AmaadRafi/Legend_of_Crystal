@@ -57,6 +57,22 @@ interface (GameWorld.html).  Tidying/organizing.
 
 ===============================================================
 
+9/21/19 - Jason Allen
+
+Added the first battle scene, "Battle_Earth".html as well as 
+the prep scene "Transition_Earth".html.  Added functionality
+for dynamic loading of content from Battle_Earth.html into 
+Transition_Earth.html, allowing for continuous music playback.
+
+Added win/lose events, and treasure collection from defeated
+enemies. 
+
+Added more music.
+
+NOTE: due to the addition of dynamic page loading, game must now
+run in a web server to run properly due to Chrome restrictions
+
+===============================================================
 
 
 

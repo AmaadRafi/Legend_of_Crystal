@@ -12,12 +12,13 @@ Jason Allen 9/11/2019 9:47 PM.
 */
 
 class Item{
-    constructor(displayName, type, isConsumable){
+    constructor(displayName, type, isConsumable, imageSource){
         this.handleParentExceptions(displayName, type, isConsumable);
         this.displayName = displayName;
         this.name = displayName.toUpperCase();
         this.type = type.toUpperCase();
         this.isConsumable = isConsumable;
+        this.imageSource = imageSource;
         this.consumeMessage = "";
     }
     setConsumeMessage(consumeMessage){
@@ -64,9 +65,9 @@ class Item{
     }
 }
 class Weapon extends Item {
-    constructor(displayName, element, weaponType, attackPower, isConsumable) {
+    constructor(displayName, element, weaponType, attackPower, isConsumable, imageSource) {
         
-        super(displayName, "weapon", isConsumable);
+        super(displayName, "weapon", isConsumable, imageSource);
         this.handleChildExceptions(element, weaponType, attackPower);
         this.element = element.toUpperCase();
         this.weaponType = weaponType.toUpperCase();
@@ -98,9 +99,9 @@ class Weapon extends Item {
     }
 }
 class Armor extends Item{
-    constructor(displayName, element, armorType, defenseValue, isConsumable) {
+    constructor(displayName, element, armorType, defenseValue, isConsumable, imageSource) {
         
-        super(displayName, "armor", isConsumable);
+        super(displayName, "armor", isConsumable, imageSource);
         this.handleChildExceptions(element, armorType, defenseValue);
         this.element = element.toUpperCase();
         this.armorType = armorType.toUpperCase();

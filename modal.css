@@ -1,0 +1,58 @@
+.overlay {
+    position: fixed; /* Positioning and size */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128,128,128,0.5); /* color */
+    display: none; /* making it hidden by default */
+}
+.modal {
+    position: fixed; /* positioning in center of page */
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+    height: 400px; /* size */
+    width: 600px;
+    background-color: white; /* background color */
+}
+
+#continue{
+    position: absolute;
+    top: 80%;
+    left: 20%;
+}
+#viewLog{
+    position: absolute;
+    top: 80%;
+    right: 20%;
+}
+.treasureBox{
+    position: absolute;
+    top: 40%;
+    width: 20%;
+    height: 30%;
+    background-color: black;
+}
+.treasureBoxSmall{
+    position: absolute;
+    top: 40%;
+    width: 14%;
+    height: 20%;
+    background-color: black;
+}
+.modalWin{
+	position: absolute;
+	top: 7%;
+	left: 30%;
+}
+.modalLose{
+	position: absolute;
+	top: 30%;
+	left: 30%;
+}
+.modalSubtext{
+	position: absolute;
+	top: 25%;
+	left: 10%;
+}

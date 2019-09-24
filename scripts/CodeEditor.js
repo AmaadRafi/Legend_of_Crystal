@@ -1,3 +1,9 @@
+/* Jason Allen 9/15/19 5:14 PM.
+
+This script implements CodeMirror
+into the game, and provides methods
+for code injection
+*/ 
 function addScript(){
 
    // Create the element
@@ -16,20 +22,6 @@ function reset(){
    cm.setValue("");
    cm.clearHistory();
 }
-window.onerror = function (msg, url, lineNo, columnNo, error) {
-    var string = msg.toLowerCase();
-    var substring = "script error";
-    if (string.indexOf(substring) > -1){
-      alert('Script Error: See Browser Console for Detail');
-    } else {
-      var message = "There is an error in your code, please try again.";
- 
-      alert(message);
-    }
-  
-    return false;
-  };
-
 // code from codeMirror
 window.onload = function() {
    
@@ -49,9 +41,3 @@ window.onload = function() {
     }
  });
 }
-// basic version of injection.  
-
-/*window.onload = function() {
-var textBox = document.getElementById("code");
-console.log(textBox.value);
-} */

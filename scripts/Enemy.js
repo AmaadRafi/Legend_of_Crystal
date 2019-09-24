@@ -5,14 +5,18 @@ be found in the game.
 */ 
 
 class Enemy {
-    constructor(name, hitpoints, weapon, armor) {
-        this.name = name;
+    constructor(name, hitpoints, weapon, armor, treasureChest) {
+        this.name = name.toUpperCase();
+        this.displayName = name;
         this.heroType = null;
         this.hitpoints = hitpoints;
         this.weapon = weapon;
         this.armor = armor;
+        this.isInvulnerable = false;
+        this.treasureChest = treasureChest;
     }
     attack(playerCharacter){
+        if(!playerCharacter.isInvulnerable)
         playerCharacter.hitpoints -= this.weapon.attackPower;
     }
     debugPrintEnemyStats(){

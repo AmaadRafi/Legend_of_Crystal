@@ -47,39 +47,35 @@ class Party {
         alert(heroName + " not found"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
 }
-class BattleParty{
+class BattleParty extends Party{
 
-    constructor(warrior, mage, ranger, inventory){
-        this.warrior = warrior;
-        this.mage = mage;
-        this.ranger = ranger;
-        this.inventory = inventory;
+    constructor(warrior, mage, ranger, inventory, currentEnemy){
+        super(warrior, mage, ranger, inventory);
+        this.currentEnemy = currentEnemy;
     }
-    selectHero(heroType){
+    attack(enemyName, heroType){
 
-        var heroName = heroType.toUpperCase();
-
-        switch (heroName) {
-            case this.warrior.heroType:
-                return this.warrior;
-            case this.mage.heroType:
-                return this.mage;
-            case this.ranger.heroType:
-                return this.ranger;
-            default:
-                this.alertHeroNotFound(heroName);
-        }
-    }
-    attack(enemy, hero){
-
-        if(hero.actionThisTurn == false){
-            
-            hero.actionThisTurn = true;
-            hero.attack(enemy);
-            console.log(hero.name + " attacked " + enemy.name);
+        var hero = this.selectHero(heroType);
+        enemyName = enemyName.toUpperCase();
+        
+        if(enemyName == this.currentEnemy.name){
+            if(hero.actionThisTurn == false){
+                
+                hero.actionThisTurn = true;
+                hero.attack(this.currentEnemy);
+                console.log(hero.name + " attacked " + this.currentEnemy.displayName);
+            }
+            else{
+                console.log(hero.name + " may only move once per turn");
+            }
         }
         else{
-            console.log(hero.name + " may only move once per turn");
+            console.log(enemyName + " is not the current enemy.  Try again.");
+        }
+    }
+    takeTreasure(){
+        for(var i = 0; i < currentEnemy.treasureChest.length; i++){
+            this.inventory.pickUp(currentEnemy.treasureChest[i]);
         }
     }
     resetStates(){

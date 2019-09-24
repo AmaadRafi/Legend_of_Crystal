@@ -5,10 +5,9 @@ within the game.  Attached via
 script tags in the HTML files.
 
 NOTE: Chrome does not allow autoplay,
-which is the reason for the oninput()
+which is the reason for the onmousedown()
 function rather than onload().
 */
-
 
 function MusicPlayer(src) {
     this.sound = document.createElement("audio");
