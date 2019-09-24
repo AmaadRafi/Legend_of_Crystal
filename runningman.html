@@ -78,6 +78,7 @@
             window.requestAnimationFrame(draw);
             }//end draw
 
+            //this setinterval is creating layout thrashing, working on an alternative
         setInterval(function() {
             draw()
         }, 20);
