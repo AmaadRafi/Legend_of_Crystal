@@ -21,9 +21,10 @@
 <script type="text/javascript" src="scripts/Party.js"></script>
 <script type="text/javascript" src="scripts/Enemy.js"></script>
 <script type="text/javascript" src="scripts/Battle_Earth.js"></script>
+<script type="text/javascript" src="scripts/Transition.js"></script>
 </head>
 
-<body>
+<body id="container">
     <script>
         window.onmousedown = function(){
 
@@ -35,21 +36,17 @@
         }
     }
     </script>
-    
     <div id ="leftScreen">
-            <div id="background">
-                    <img id ="map" src="images/maps/earth2.jpg">
-            </div>
+        <div id="background">
+            <img id ="map" src="images/battle_earth.png">
+        </div>
         <div id="codeBox">
-            <textarea name="Code" id="code">var pillars = 5;
-
-party.attack("ogre", "warrior");
-party.attack("ogre", "mage");
-party.attack("ogre", "ranger");</textarea>
+            <textarea name="Code" id="code"></textarea>
         </div>
         <div id="buttonContainer">
-        <button id="apply" onclick="battleEarth()">Apply</button>
-        <button id="reset" onclick="reset()">Reset</button>
+            <button id="apply" onclick="addScript()">Apply</button>
+            <button id="reset" onclick="reset()">Reset</button>
+            <a id="startBattle" href="Battle_Earth.html">START BATTLE</a>
         </div>
     </div>
     <div id ="rightScreen">
@@ -62,14 +59,8 @@ party.attack("ogre", "ranger");</textarea>
         </div>
         <div id="console"></div>  
     </div>
-
-    <div class="overlay">
-        <div class="modal" id="popup">
-            <button id = "continue" onclick="stateChange()">Continue</button>
-            <button id = "viewLog" onclick="viewLog()">View Battle Log</button>
-        </div>
-    </div>
-
+    <div id="overlay"></div>
     <script type="text/javascript" src="scripts/Logger.js"></script>
+    
 </body>
 </html>

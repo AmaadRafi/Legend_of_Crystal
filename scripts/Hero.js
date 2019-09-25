@@ -170,7 +170,7 @@ class HeroWarrior extends Hero{
         this.heroType = "WARRIOR";
         this.allowedWeaponType = "CLOSE";
         this.allowedArmorType = "HEAVY";
-        var defaultWarWeapon = new Weapon("Sword", "none", "close", 100, false, "images/weapons/Heavy_Sword.png");
+        var defaultWarWeapon = new Weapon("Sword", "none", "close", 100, false, "images/weapons/Scimitar.png");
         var defaultWarClothes = new Armor("Warrior Clothes", "none", "heavy", 100, false, "");
         this.weapon = defaultWarWeapon;
         this.armor = defaultWarClothes;

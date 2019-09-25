@@ -11,6 +11,8 @@ var mageObject = CacheHandler.getFromCache("mage");
 var rangerObject = CacheHandler.getFromCache("ranger");
 var inventoryObject = CacheHandler.getFromCache("inventory");
 
+var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
+
 var sword = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
 var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
 var earthStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
@@ -32,7 +34,7 @@ function battleEarth(){
         return;
     }
     
-    var party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, earthEnemy);
+    party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, earthEnemy);
     currentParty = party;
     currentEnemy = earthEnemy;
 

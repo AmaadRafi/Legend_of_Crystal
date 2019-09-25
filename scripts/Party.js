@@ -31,17 +31,26 @@ class Party {
     changeWeapon(heroType, weapon){
 
         var hero = this.selectHero(heroType);
-        hero.changeWeapon(weapon, this.inventory);
+        hero.changeWeapon(weapon, this.inventory.inventory);
+
+        this.inventory.buildInventoryDisplay();
+        this.inventory.showInventory();
     }
     changeArmor(heroType, armor){
 
         var hero = this.selectHero(heroType);
-        hero.changeArmor(armor, this.inventory);
+        hero.changeArmor(armor, this.inventory.inventory);
+
+        this.inventory.buildInventoryDisplay();
+        this.inventory.showInventory();
     }
     use(heroType, item){
 
         var hero = this.selectHero(heroType);
-        hero.use(item, this.inventory);
+        hero.use(item, this.inventory.inventory);
+
+        this.inventory.buildInventoryDisplay();
+        this.inventory.showInventory();
     }
     alertHeroNotFound(heroName){
         alert(heroName + " not found"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */

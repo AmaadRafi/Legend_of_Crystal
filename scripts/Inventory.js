@@ -4,7 +4,7 @@ This script defines the inventory and defines
 methods for the player to interact with it
 */ 
 
-var inventorySize = 40;
+var inventorySize = 30;
 
 class Inventory{
 
@@ -102,6 +102,53 @@ class Inventory{
          }
 
         return InventoryObject;
+    }
+    buildInventoryDisplay(){
+    
+        var background = document.getElementById("background");
+        var inventoryScreen = document.getElementById("inventory");
+
+        if(inventoryScreen == null){
+            background.innerHTML +=  "<div id='inventory' class='inventoryOverlay'></div>";
+            inventoryScreen = document.getElementById("inventory");
+        }
+        else{
+            inventoryScreen.innerHTML = "";
+        }
+        var firstImagePosition = 1;
+        var rowPosition = 2;
+        for(var i = 0; i < inventorySize; i++){
+
+            if(i > 0 && i % 10 == 0){
+                rowPosition += 15;
+                firstImagePosition = 1;
+            }
+            try {
+                var imageSource = this.inventory[i].imageSource;
+                var thisItemName = this.inventory[i].name;
+            } catch (error) {
+                imageSource = "";
+                thisItemName = "empty";
+            }
+            inventoryScreen.innerHTML += "<div class='treasureBoxVerySmall'"+" style='top: "+rowPosition+"%; left: "
+            +firstImagePosition+"%;'>"+"<img class='inventoryImage' src="+imageSource+"></div><div class='marquee' style='top: "
+            +(rowPosition + 10)+"%; left: "+firstImagePosition+"%;'><b>"+thisItemName+"</b></div>";
+            firstImagePosition += 9;
+        }
+        inventoryScreen.style.display = "block";
+    }
+    showInventory(){
+        var inventoryScreen = document.getElementById("inventory");
+
+        if(inventoryScreen == null){
+            this.buildInventoryDisplay();
+            inventoryScreen = document.getElementById("inventory");
+        }
+        inventoryScreen.style.display = "block";
+    }
+    hideInventory(){
+        
+        var inventoryScreen = document.getElementById("inventory").style.display = "none";
     }
     alertInventoryFull(){
         console.log("Inventory Full!\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
