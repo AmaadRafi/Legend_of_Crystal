@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Walking Man</title> 
+        <style> 
+        #canvas{
+            outline:1px solid #be1313; 
+            background-image: url("map.png");
+            background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+
+      <body>
+        <h1>move character with "wasd" keys to test, for now</h1>
+        <canvas id="canvas" width = "800" height = "500"> </canvas>
+       
+        <script>
+  //constant VARIABLES
+const SCALE = 2;
+const WIDTH = 16;
+const HEIGHT = 18;
+const SCALED_WIDTH = SCALE * WIDTH;
+const SCALED_HEIGHT = SCALE * HEIGHT;
+const CYCLE_LOOP = [0, 1, 0, 2]; //array for spritesheet
+const FACING_DOWN = 0; 
+const FACING_UP = 1;
+const FACING_LEFT = 2;
+const FACING_RIGHT = 3; 
+const FRAME_LIMIT = 12; // number of frames
+
+const MOVEMENT_SPEED = 2; //NUMBER OF PIXELS MOVED PER FRAME
+
+let canvas = document.querySelector('canvas');
+let ctx = canvas.getContext('2d');
+let currentDirection = FACING_DOWN;
+let currentLoopIndex = 0; //keeps track of where we are in CYCLE_LOOP
+let frameCount = 0;
+// let character be positioned randomly each time screen is refreshed
+let positionX = Math.random()*300+100; ;
+let positionY = Math.random()*200+100; ;
+let walkerImage = new Image();
+
+
+let keyPresses = {}; //object that stores [array] for all key presses, will use later on 
+
+    // keyUP and keyDown track when keys are pressed
+window.addEventListener('keydown', keyDownListener);
+function keyDownListener(event) {
+    keyPresses[event.key] = true;
+}
+window.addEventListener('keyup', keyUpListener);
+function keyUpListener(event) {
+    keyPresses[event.key] = false;
+}
+// loadsImage
+function display() {
+    // open source sprite sheet
+  walkerImage.src = 'https://opengameart.org/sites/default/files/Green-Cap-Character-16x18.png';
+  walkerImage.onload = function() { 
+    window.requestAnimationFrame(gameLoop);
+  };
+} //end display
+
+function drawFrame(frameX, frameY, canvasX, canvasY) {
+  ctx.drawImage(walkerImage,
+                frameX * WIDTH, frameY * HEIGHT, WIDTH, HEIGHT,
+                canvasX, canvasY, SCALED_WIDTH, SCALED_HEIGHT);
+} //end drawFrame
+
+display();
+
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  let hasMoved = false;
+
+
+    //ORIGINALLY USED ARROW KEYS BUT, THE SCREEN WOULD SCROLL SO USE WASD KEYS TO MOVE NOW
+    // Irrelvant since we will be using the code function to move him but to test use "WASD" for now
+  if (keyPresses.w) {
+    moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
+    hasMoved = true;
+  } else if (keyPresses.s) {
+    moveCharacter(0, MOVEMENT_SPEED, FACING_DOWN);
+    hasMoved = true;
+  }
+  if (keyPresses.a) {
+    moveCharacter(-MOVEMENT_SPEED, 0, FACING_LEFT);
+    hasMoved = true;
+  } else if (keyPresses.d) {
+    moveCharacter(MOVEMENT_SPEED, 0, FACING_RIGHT);
+    hasMoved = true;
+  }
+
+    //update frame count if there's any movement
+  if (hasMoved) {
+    frameCount++;
+    if (frameCount >= FRAME_LIMIT) {
+      frameCount = 0;
+      currentLoopIndex++;
+      if (currentLoopIndex >= CYCLE_LOOP.length) {
+        currentLoopIndex = 0;
+      }
+    }
+  }
+
+  if (!hasMoved) {
+    currentLoopIndex = 0;
+  }
+    // 0,1,0,2 for walk animation so we bring back currentLoopIndex  inside drawframe call 
+  drawFrame(CYCLE_LOOP[currentLoopIndex], currentDirection, positionX, positionY);
+  window.requestAnimationFrame(gameLoop);
+} // end gameLoop
+
+// keeps walkingMan from walking outside of the canvas
+function moveCharacter(deltaX, deltaY, direction) {
+  // CHECKS FOR LEFT and RIGHT EDGE COLLISION
+  if (positionX + deltaX > 0 && positionX + SCALED_WIDTH + deltaX < canvas.width) {
+    positionX += deltaX;
+  }
+  // CHECKS FOR TOP and BOTTOM EDGE COLLISION
+  if (positionY + deltaY > 0 && positionY + SCALED_HEIGHT + deltaY < canvas.height) {
+    positionY += deltaY;
+  }
+  currentDirection = direction;
+} // end moveCharacter
+
+        </script>
+      </body>
+  </html>
