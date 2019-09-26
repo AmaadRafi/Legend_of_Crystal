@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Walking Man</title> 
+     
+        <title>Walking Man with Flames</title> 
         <style> 
         #canvas{
             outline:1px solid #be1313; 
@@ -17,6 +18,104 @@
         <canvas id="canvas" width = "800" height = "500"> </canvas>
        
         <script>
+              
+        var canvas = document.querySelector('#canvas');
+        
+
+
+var context= canvas.getContext('2d');
+var flameImage = new Image();
+flameImage.src = 'flames.png';
+flameImage.addEventListener('load',drawFlames,false);
+/*
+**************
+Script for the Flames 
+**************
+*/
+    //Flame class
+var Flame = {
+    sx: 0,
+    sy: 0,
+    dx: 0,
+    dy: 0,
+    spriteW: 0,
+    spriteH: 0,
+    w: 0,
+    h: 0,
+    frames: 1,
+    cols: 1,
+    currentFrame: 0,
+    speedX: 0,
+    speedY: 0,
+
+    updateFrames: function() {
+        this.sx = Math.floor(this.currentFrame % this.cols) * this.spriteW;// make it move over one column 
+        this.sy = Math.floor(this.currentFrame / this.cols) * this.spriteH;//make it move down one row
+        this.currentFrame = (this.currentFrame+40) % this.frames;
+        context.fill();
+        context.clearRect(this.sx -100, this.sy -100,this.dx + 20,this.dy + 20);
+    },// end updateFrames
+
+
+    display: function(){
+        context.drawImage(
+            flameImage,
+            this.sx, this.sy, this.spriteW, this.spriteH, // source coordinates
+            this.dx, this.dy, this.w, this.h //destination coordinates
+            
+            )
+    } //end display
+} //end Flame
+
+
+//instance of Flame class, creates the object
+var flame = Object.create(Flame);
+flame.sx = 0;
+flame.sy =0;
+// starting location
+flame.dx = 730;
+flame.dy = 0;
+flame.spriteW = 39;
+flame.spriteH = 40;
+flame.w = 39;
+flame.h = 40;
+flame.frames = 12;
+flame.cols = 3;
+
+var flames = Object.create(Flame);
+flames.sx = 0;
+flames.sy =0;
+// starting location
+flames.dx = 640;
+flames.dy = 0;
+flames.spriteW = 39;
+flames.spriteH = 40;
+flames.w = 39;
+flames.h = 40;
+flames.frames = 12;
+flames.cols = 3;
+
+function drawFlames() { 
+    flame.display();
+    flame.updateFrames();
+    flames.display();
+    flames.updateFrames();
+    window.requestAnimationFrame(drawFlames);
+   
+
+}//end drawFlames
+
+setInterval(function() {
+     window.requestAnimationFrame(drawFlames);
+  
+
+}, 10);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+**************
+Script for the WalkingMan 
+**************
+*/
   //constant VARIABLES
 const SCALE = 2;
 const WIDTH = 16;
@@ -32,7 +131,7 @@ const FRAME_LIMIT = 12; // number of frames
 
 const MOVEMENT_SPEED = 2; //NUMBER OF PIXELS MOVED PER FRAME
 
-let canvas = document.querySelector('canvas');
+//let canvas = document.querySelector('canvas');
 let ctx = canvas.getContext('2d');
 let currentDirection = FACING_DOWN;
 let currentLoopIndex = 0; //keeps track of where we are in CYCLE_LOOP
