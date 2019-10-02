@@ -8,3 +8,8 @@ function goToEarth(){
 
     window.location.href = "Transition_Earth.html";
 }
+
+function goToIce()
+{
+    window.location.href = "battle_snow.html";
+}
