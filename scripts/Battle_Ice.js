@@ -5,9 +5,9 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-var sword = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
+var staff = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
 var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
-var earthStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
+var iceStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
 var snowEnemy = new Enemy("abdominal Snowman", 400, staff , armor, [staff, potion, iceStone]);
