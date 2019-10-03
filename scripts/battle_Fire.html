@@ -38,26 +38,26 @@
     
     <div id ="leftScreen">
             <div id="background">
-                    <img id ="map" src="images\floating_maps\Earth720x352.png">
+                    <img id ="map" src="images\floating_maps\firemap.png">
             </div>
         <div id="codeBox">
             <textarea name="Code" id="code">var pillars = 5;
 
-party.attack("ogre", "warrior");
-party.attack("ogre", "mage");
-party.attack("ogre", "ranger");</textarea>
+party.attack("dragon", "warrior");
+party.attack("dragon", "mage");
+party.attack("dragon", "ranger");</textarea>
         </div>
         <div id="buttonContainer">
-        <button id="apply" onclick="battleEarth()">Apply</button>
+        <button id="apply" onclick="battleFire()">Apply</button>
         <button id="reset" onclick="reset()">Reset</button>
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules">You have entered the realm of the Earth Boss<br><br>
-        You must destroy the 5 pillars surrounding the boss and then attack with 
+        <div id="gameRules">You have entered the dragons layer<br><br>
+        You must destroy the fire that powers the dragon then attack with 
         every member of your team to win the battle<br><br>
         In code, this looks something like: <br>
-        var pillars = 0;<br>
+        var fire_pits = 0;<br>
         party.attack("enemyName", "partyMember");
         </div>
         <div id="console"></div>  

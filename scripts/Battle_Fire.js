@@ -5,12 +5,12 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-var staff = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
+var fire = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
 var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
-var iceStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
+var fireStone = new Item("fire Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var snowEnemy = new Enemy("snowman", 300, staff , armor, [staff, potion, iceStone]);
+var fireEnemy = new Enemy("dragon", 300, fire , armor, [fire, potion, iceStone]);
 
 var currentEnemy = null;
 var currentParty = null;
@@ -26,9 +26,9 @@ function battleIce(){
         return;
     }
     
-    party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, snowEnemy);
+    party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, fireEnemy);
     currentParty = party;
-    currentEnemy = snowEnemy;
+    currentEnemy = fireEnemy;
 
     var taskCompleted = false;
       
@@ -36,31 +36,31 @@ function battleIce(){
     eval(cm.getValue()); // eval() pastes code from the user into this spot.
 
     party.warrior.debugPrintHeroStats();
-    snowEnemy.debugPrintEnemyStats();
+    fireEnemy.debugPrintEnemyStats();
     
     try {
         
-        if(pillars <= 5)
-            for(var i = 0; i < pillars; i++){
+        if(fire_pit <= 5)
+            for(var i = 0; i < fire_pit; i++){
                 
-                console.log("Destroyed pillar " + (i + 1));
+                console.log("destroyed Fire pit " + (i + 1));
             }
-        if(pillars == 5){
+        if(fire_pit == 4){
             taskCompleted = true;
         }
-        else if(pillars > 5){
-            console.log("You destroyed too many pillars!  The cave starts to collapse!");
+        else if(fire_pit > 4){
+            console.log("There are only 4 fire pits!");
         }
         else{
-            console.log("You did not destroy all of the pillars!  " + snowEnemy.name + " attacks!");
+            console.log("You did not destroy all the fire pits!  " + fireEnemy.name + " attacks!");
         }
     } catch (error) {
-        alert("you did not define the var pillars!  Try again.");
+        alert("you did not define the var fire_pits!  Try again.");
     }
 
     party.resetStates();
 
-    if(snowEnemy.hitpoints <= 0 && taskCompleted == true)
+    if(fireEnemy.hitpoints <= 0 && taskCompleted == true)
         win();
     else
         lose();
