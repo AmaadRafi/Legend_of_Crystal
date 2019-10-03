@@ -5,7 +5,6 @@ likely will be incorporated into a
 single Battle.js script
 */
 
-
 var warriorObject = CacheHandler.getFromCache("warrior");
 var mageObject = CacheHandler.getFromCache("mage");
 var rangerObject = CacheHandler.getFromCache("ranger");
@@ -13,8 +12,8 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-var sword = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
-var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
+var sword = new Weapon("Rock Bow", "earth", "ranged", 100, false, "images/weapons/Crossbow.png");
+var armor = new Armor("Earth Armor", "earth", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
 var earthStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);

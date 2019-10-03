@@ -43,26 +43,6 @@ function battleFire(){
 
     party.warrior.debugPrintHeroStats();
     fireEnemy.debugPrintEnemyStats();
-    
-    try {
-        
-        if(fire_pit <= 4)
-            for(var i = 0; i < fire_pit; i++){
-                
-                console.log("destroyed Fire pit " + (i + 1));
-            }
-        if(fire_pit == 4){
-            taskCompleted = true;
-        }
-        else if(fire_pit > 4){
-            console.log("There are only 4 fire pits!");
-        }
-        else{
-            console.log("You did not destroy all the fire pits!  " + fireEnemy.name + " attacks!");
-        }
-    } catch (error) {
-        alert("you did not define the var fire_pits!  Try again.");
-    }
 
     party.resetStates();
 
