@@ -5,15 +5,9 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-<<<<<<< HEAD
-var fire = new Weapon("Flame Staff", "fire", "close", 100, false, "images/weapons/Flame_Staff.png");
-var armor = new Armor("Dragon Shield", "fire", "heavy", 100, false, "images/weapons/Shield.png");
-var fireStone = new Item("fire Stone", "consumable", false, "images/crystals/Red_Crystal.jpg");
-=======
 var fireStaff = new Weapon("Flame Staff", "fire", "magic", 100, false, "images/weapons/Flame_Staff.png");
 var armor = new Armor("Fire Armor", "fire", "heavy", 100, false, "images/armor/Fire_Armor.png");
 var fireStone = new Item("Fire Stone", "consumable", false, "images/crystals/Red_Crystal.jpg");
->>>>>>> 717fb40a7cd1f23b6d139905a542bbc38dbc6f4b
 var potion = new Item("Potion", "consumable", true, "images/items/Red_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
 var fireEnemy = new Enemy("Dragon", 300, fireStaff, armor, [fireStaff, armor, potion, fireStone]);
