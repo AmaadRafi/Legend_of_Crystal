@@ -20,11 +20,10 @@
 <script type="text/javascript" src="scripts/CacheHandler.js"></script>
 <script type="text/javascript" src="scripts/Party.js"></script>
 <script type="text/javascript" src="scripts/Enemy.js"></script>
-<script type="text/javascript" src="scripts/Battle_Earth.js"></script>
-<script type="text/javascript" src="scripts/Transition.js"></script>
+<script type="text/javascript" src="scripts/Battle_Ice.js"></script>
 </head>
 
-<body id="containerEarth">
+<body>
     <script>
         window.onmousedown = function(){
 
@@ -36,31 +35,37 @@
         }
     }
     </script>
+    
     <div id ="leftScreen">
-        <div id="background">
-            <img id ="map" src="images/maps/earth.jpg">
-        </div>
+            <div id="background">
+                    <img id ="map" src="images\floating_maps\ice.png">
+            </div>
         <div id="codeBox">
-            <textarea name="Code" id="code">party.inventory.showInventory();</textarea>
+            <textarea name="Code" id="code"></textarea>
         </div>
         <div id="buttonContainer">
-            <button id="apply" onclick="addScript()">Apply</button>
-            <button id="reset" onclick="reset()">Reset</button>
-            <a id="startBattle" href="Battle_Earth.html">START BATTLE</a>
+        <button id="apply" onclick="battleIce()">Apply</button>
+        <button id="reset" onclick="reset()">Reset</button>
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules"><b>You have entered the realm of the Earth Boss<br><br>
+        <div id="gameRules">You have entered the realm of the Earth Boss<br><br>
         You must destroy the 5 pillars surrounding the boss and then attack with 
         every member of your team to win the battle<br><br>
         In code, this looks something like: <br>
         var pillars = 0;<br>
-        party.attack("enemyName", "partyMember");</b>
+        party.attack("enemyName", "partyMember");
         </div>
         <div id="console"></div>  
     </div>
-    <div id="overlay"></div>
+
+    <div class="overlay">
+        <div class="modal" id="popup">
+            <button id = "continue" onclick="stateChange()">Continue</button>
+            <button id = "viewLog" onclick="viewLog()">View Battle Log</button>
+        </div>
+    </div>
+
     <script type="text/javascript" src="scripts/Logger.js"></script>
-    
 </body>
 </html>
