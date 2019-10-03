@@ -20,7 +20,7 @@
 <script type="text/javascript" src="scripts/CacheHandler.js"></script>
 <script type="text/javascript" src="scripts/Party.js"></script>
 <script type="text/javascript" src="scripts/Enemy.js"></script>
-<script type="text/javascript" src="scripts/Battle_Ice.js"></script>
+<script type="text/javascript" src="scripts/Battle_Fire.js"></script>
 </head>
 
 <body>
@@ -38,17 +38,17 @@
     
     <div id ="leftScreen">
             <div id="background">
-                    <img id ="map" src="images\floating_maps\ice.png">
+                    <img id ="map" src="images\floating_maps\Earth720x352.png">
             </div>
         <div id="codeBox">
             <textarea name="Code" id="code">var pillars = 5;
 
-party.attack("snowman", "warrior");
-party.attack("snowman", "mage");
-party.attack("snowman", "ranger");</textarea>
+party.attack("ogre", "warrior");
+party.attack("ogre", "mage");
+party.attack("ogre", "ranger");</textarea>
         </div>
         <div id="buttonContainer">
-        <button id="apply" onclick="battleIce()">Apply</button>
+        <button id="apply" onclick="battleEarth()">Apply</button>
         <button id="reset" onclick="reset()">Reset</button>
         </div>
     </div>

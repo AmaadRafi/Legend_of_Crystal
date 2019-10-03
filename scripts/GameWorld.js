@@ -13,3 +13,8 @@ function goToIce()
 {
     window.location.href = "battle_snow.html";
 }
+
+function goToFire()
+{
+    window.location.href = "battle_Fire.html";
+}

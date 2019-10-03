@@ -10,14 +10,14 @@ var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons
 var iceStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var snowEnemy = new Enemy("abdominal Snowman", 400, staff , armor, [staff, potion, iceStone]);
+var snowEnemy = new Enemy("snowman", 300, staff , armor, [staff, potion, iceStone]);
 
 var currentEnemy = null;
 var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
 
-function battleEarth(){
+function battleIce(){
 
     if(!partyIsAlive){
         return;
