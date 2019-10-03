@@ -10,14 +10,14 @@ var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons
 var fireStone = new Item("fire Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var fireEnemy = new Enemy("dragon", 300, fire , armor, [fire, potion, iceStone]);
+var fireEnemy = new Enemy("dragon", 300, fire , armor, [fire, potion, fireStone]);
 
 var currentEnemy = null;
 var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
 
-function battleIce(){
+function battleFire(){
 
     if(!partyIsAlive){
         return;
@@ -40,7 +40,7 @@ function battleIce(){
     
     try {
         
-        if(fire_pit <= 5)
+        if(fire_pit <= 4)
             for(var i = 0; i < fire_pit; i++){
                 
                 console.log("destroyed Fire pit " + (i + 1));
