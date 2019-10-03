@@ -36,15 +36,13 @@ function battleFire(){
 
     for(var i = 0; i < 10; i++){
 
-        
         eval(cm.getValue());
+        party.resetStates();
     }
     //eval(cm.getValue()); // eval() pastes code from the user into this spot.
 
     party.warrior.debugPrintHeroStats();
     fireEnemy.debugPrintEnemyStats();
-
-    party.resetStates();
 
     if(fireEnemy.hitpoints <= 0 && taskCompleted == true)
         win();
