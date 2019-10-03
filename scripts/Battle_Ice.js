@@ -5,10 +5,10 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-var staff = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
-var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
-var iceStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
-var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
+var staff = new Weapon("Snowman", "ice", "close", 100, false, "images/weapons/Ice_Staff.png");
+var armor = new Armor("Snowman Armor", "fire", "heavy", 100, false, "images/weaponsShield.png");
+var iceStone = new Item("Ice Stone", "consumable", false, "images/crystals/Blue_Crystal.jpg");
+var potion = new Item("Potion", "consumable", true, "images/items/Blue_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
 var snowEnemy = new Enemy("snowman", 300, staff , armor, [staff, potion, iceStone]);
 
@@ -40,22 +40,18 @@ function battleIce(){
     
     try {
         
-        if(pillars <= 5)
-            for(var i = 0; i < pillars; i++){
-                
-                console.log("Destroyed pillar " + (i + 1));
-            }
-        if(pillars == 5){
+        
+        if(torch == true){
+            console.log("Snowman has been weakened!");
             taskCompleted = true;
+
         }
-        else if(pillars > 5){
-            console.log("You destroyed too many pillars!  The cave starts to collapse!");
+        else if(torch!=true){
+            console.log("you did not set torch= true!");
         }
-        else{
-            console.log("You did not destroy all of the pillars!  " + snowEnemy.name + " attacks!");
-        }
+      
     } catch (error) {
-        alert("you did not define the var pillars!  Try again.");
+        alert("you did not define the var torch!  Try again.");
     }
 
     party.resetStates();
