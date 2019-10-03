@@ -5,12 +5,12 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-var fire = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
-var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
-var fireStone = new Item("fire Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
-var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
+var fireStaff = new Weapon("Flame Staff", "fire", "magic", 100, false, "images/weapons/Flame_Staff.png");
+var armor = new Armor("Fire Armor", "fire", "heavy", 100, false, "images/armor/Fire_Armor.png");
+var fireStone = new Item("Fire Stone", "consumable", false, "images/crystals/Red_Crystal.jpg");
+var potion = new Item("Potion", "consumable", true, "images/items/Red_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var fireEnemy = new Enemy("dragon", 300, fire , armor, [fire, potion, fireStone]);
+var fireEnemy = new Enemy("Dragon", 300, fireStaff, armor, [fireStaff, armor, potion, fireStone]);
 
 var currentEnemy = null;
 var currentParty = null;
@@ -33,7 +33,13 @@ function battleFire(){
     var taskCompleted = false;
       
     var cm = document.querySelector('.CodeMirror').CodeMirror;
-    eval(cm.getValue()); // eval() pastes code from the user into this spot.
+
+    for(var i = 0; i < 10; i++){
+
+        
+        eval(cm.getValue());
+    }
+    //eval(cm.getValue()); // eval() pastes code from the user into this spot.
 
     party.warrior.debugPrintHeroStats();
     fireEnemy.debugPrintEnemyStats();
