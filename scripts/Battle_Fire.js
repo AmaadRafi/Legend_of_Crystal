@@ -33,18 +33,21 @@ function battleFire(){
     var taskCompleted = false;
       
     var cm = document.querySelector('.CodeMirror').CodeMirror;
+    party.warrior.debugPrintHeroStats();
+    party.mage.debugPrintHeroStats();
+    party.ranger.debugPrintHeroStats();
+    fireEnemy.debugPrintEnemyStats();
 
     for(var i = 0; i < 10; i++){
 
         eval(cm.getValue());
         party.resetStates();
+
+        taskCompleted = true;
     }
-    //eval(cm.getValue()); // eval() pastes code from the user into this spot.
+    //eval(cm.getValue()); // eval() pastes code from the user into this spots
 
-    party.warrior.debugPrintHeroStats();
-    fireEnemy.debugPrintEnemyStats();
-
-    if(fireEnemy.hitpoints <= 0 && taskCompleted == true)
+    if(taskCompleted == true)
         win();
     else
         lose();
