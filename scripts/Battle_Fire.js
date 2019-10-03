@@ -31,6 +31,7 @@ function battleFire(){
     currentEnemy = fireEnemy;
 
     var taskCompleted = false;
+    var damageOverTime = false;
       
     var cm = document.querySelector('.CodeMirror').CodeMirror;
     party.warrior.debugPrintHeroStats();
@@ -38,16 +39,38 @@ function battleFire(){
     party.ranger.debugPrintHeroStats();
     fireEnemy.debugPrintEnemyStats();
 
-    for(var i = 0; i < 10; i++){
+    taskCompleted = true;
+
+    for(var turn = 0; turn < 10; turn++){
 
         eval(cm.getValue());
+        if(turn == 3){
+            damageOverTime = true;
+            console.log("You have been burned by fire breath!  You will take damage every turn unless"
+            + "you use a potion");
+        }
+        if(damageOverTime){
+            party.warrior.hitpoints -= 20;
+            party.mage.hitpoints -= 20;
+            party.ranger.hitpoints -= 20;
+            console.log("Party takes damage from fire breath!");
+        }
+        if(party.warrior.hitpoints <= 0 && party.mage.hitpoints <= 0 && party.ranger.hitpoints <= 0){
+            partyIsAlive = false;
+            break;
+        }
+        /*if(turn == 5){
+            if(party.warrior.armor.name != "Fire Armor"){
+                taskCompleted = false;
+                break;
+            }
+        }*/
         party.resetStates();
+    } // eval() pastes code from the user into this spots
 
-        taskCompleted = true;
-    }
-    //eval(cm.getValue()); // eval() pastes code from the user into this spots
-
-    if(taskCompleted == true)
+    if(partyIsAlive == false)
+        lose();
+    else if(taskCompleted == true)
         win();
     else
         lose();
