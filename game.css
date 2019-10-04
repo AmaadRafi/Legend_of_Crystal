@@ -204,3 +204,31 @@ button {
 #health::-webkit-progress-bar {
 	background: white;
   }
+#iceStage{
+	position: absolute;
+	background-color: #0051ff;
+	height: 70px;
+	width: 50px;
+	top: 6%;
+	left: 10%;
+	visibility: hidden;
+}
+#fireStage{
+	position: absolute;
+	background-color: red;
+	height: 50px;
+	width: 50px;
+	top: 2%;
+	right: 0%;
+	visibility: hidden;
+}
+#earthStage{
+	position: absolute;
+	background-color: green;
+	height: 70px;
+	width: 50px;
+	top: 36%;
+	right: 12%;
+	visibility: hidden;
+}
+  
