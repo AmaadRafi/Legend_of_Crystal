@@ -1,4 +1,0 @@
-Jason Nichols-Allen	Exam2
-
-Postfix: abcd^*e/-fb*+
-Value: 35.5
