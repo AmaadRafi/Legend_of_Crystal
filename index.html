@@ -33,8 +33,8 @@
     </script>
     <div id ="leftScreen">
             <div id="background">
-                    <img id ="map" src="images/main.jpg">
-                    <h1 class="title">Game Title</h1>
+                    <img id ="map" class="startScreenTop" src="images/main.jpg">
+                    <img class="startScreenBottom" src="images/start_screen.png">
             </div>
         <div id="codeBox">
                 <textarea name="Code" id="code">createParty("Jay", "Amaad", "Shabir");</textarea>
@@ -45,7 +45,17 @@
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules"></div>
+        <div id="gameRules">
+                <h3 class="gameRulesBold">Welcome to Legend of Ezera!</h3> 
+                The game where you play while learning to code.  You must 
+                defeat the 3 great dragons and gain their elemental stones
+                before facing the Dragon King.<br><br>
+                Your team consists of a warrior, a mage, and a ranger.<br><br>
+                To begin, use createParty("warriorName", "mageName", "rangerName");
+                <br><br>where "warriorName", etc. are the names you have chosen for
+                your heroes.  Then click 'apply' to run the code!
+
+        </div>
         <div id="console"></div>  
     </div>
 
