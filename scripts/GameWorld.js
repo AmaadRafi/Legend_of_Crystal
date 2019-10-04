@@ -11,10 +11,10 @@ function goToEarth(){
 
 function goToIce()
 {
-    window.location.href = "battle_snow.html";
+    window.location.href = "Transition_Ice.html";
 }
 
 function goToFire()
 {
-    window.location.href = "battle_Fire.html";
+    window.location.href = "Transition_Fire.html";
 }
