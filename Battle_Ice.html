@@ -41,7 +41,13 @@
                     <img id ="map" src="images\floating_maps\ice.png">
             </div>
         <div id="codeBox">
-            <textarea name="Code" id="code"></textarea>
+            <textarea name="Code" id="code">
+if(...){
+    // do something
+} else {
+    // do something
+}
+            </textarea>
         </div>
         <div id="buttonContainer">
         <button id="apply" onclick="battleIce()">Apply</button>
@@ -49,12 +55,14 @@
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules">You have entered the realm of the Earth Boss<br><br>
-        You must destroy the 5 pillars surrounding the boss and then attack with 
-        every member of your team to win the battle<br><br>
-        In code, this looks something like: <br>
-        var pillars = 0;<br>
-        party.attack("enemyName", "partyMember");
+        <div id="gameRules"><b>
+            <div id="battleHeader" class="glowTextIce"> Ice Dragon: Issvern </div>
+            <br/>
+            You must torch the snowman to make him weak. then
+            every member of your team to win the battle<br><br>
+            In code, this looks something like: <br>
+            var torch= bool;<br>
+            party.attack("enemyName", "partyMember");
         </div>
         <div id="console"></div>  
     </div>
