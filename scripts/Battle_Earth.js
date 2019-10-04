@@ -17,7 +17,11 @@ var armor = new Armor("Earth Armor", "earth", "heavy", 100, false, "images/armor
 var earthStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
+<<<<<<< HEAD
 var earthEnemy = new Enemy("Jordwyrm", 300, sword, armor, [sword, armor, potion, earthStone]);
+=======
+var earthEnemy = new Enemy("ERYVEN", 300, sword, armor, [sword, armor, potion, earthStone]);
+>>>>>>> 40f596380d305a701748adb52d51ffd196cdf536
 
 var currentEnemy = null;
 var currentParty = null;

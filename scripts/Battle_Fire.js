@@ -10,7 +10,11 @@ var armor = new Armor("Fire Armor", "fire", "heavy", 100, false, "images/armor/F
 var fireStone = new Item("Fire Stone", "consumable", false, "images/crystals/Red_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Red_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
+<<<<<<< HEAD
 var fireEnemy = new Enemy("Eldrake", 10000, fireStaff, armor, [fireStaff, armor, potion, fireStone]);
+=======
+var fireEnemy = new Enemy("RYUJIN", 10000, fireStaff, armor, [fireStaff, armor, potion, fireStone]);
+>>>>>>> 40f596380d305a701748adb52d51ffd196cdf536
 
 var currentEnemy = null;
 var currentParty = null;

@@ -20,11 +20,11 @@
 <script type="text/javascript" src="scripts/CacheHandler.js"></script>
 <script type="text/javascript" src="scripts/Party.js"></script>
 <script type="text/javascript" src="scripts/Enemy.js"></script>
-<script type="text/javascript" src="scripts/Battle_Earth.js"></script>
+<script type="text/javascript" src="scripts/Battle_Fire.js"></script>
 <script type="text/javascript" src="scripts/Transition.js"></script>
 </head>
 
-<body id="containerEarth">
+<body id="containerFire">
     <script>
         window.onmousedown = function(){
 
@@ -38,7 +38,7 @@
     </script>
     <div id ="leftScreen">
         <div id="background">
-            <img id ="map" src="images/maps/earth.jpg">
+            <img id ="map" src="images/maps/Fire.jpg">
         </div>
         <div id="codeBox">
             <textarea name="Code" id="code">party.inventory.showInventory();</textarea>
@@ -46,21 +46,16 @@
         <div id="buttonContainer">
             <button id="apply" onclick="addScript()">Apply</button>
             <button id="reset" onclick="reset()">Reset</button>
-            <a id="startBattle" href ="Battle_Earth.html">START BATTLE</a>
+            <a id="startBattle" href="Battle_Fire.html">START BATTLE</a>
         </div>
     </div>
-
     <div id ="rightScreen">
-        <div id="gameRules"><b><br></br>You are preparing to enter the realm of Eryven, the Earth Dragon.
-            <br></br>The dragon is said to hold a legendary armor that <br>may aid you in future battles.
-            <br></br>You must first destroy the pillars that hold up the sacred shrine before the dragon
-            can be defeated.
-            <br></br>Equip your heroes for the battle ahead!<br><br/>
-            <ul>Available Actions<br></br>
-                <li>showInventory();</li>
-                <li>hideInventory();</li>
-                <li>changeWeapon("warrior/mage/ranger", "weaponName");</li>
-                <li>changeArmor("warrior/mage/ranger", "armorName");</li>
+        <div id="gameRules"><b>You are preparing to enter the Fire battle:<br/>the following
+            variables can be initialized: <br/>
+            <ul>
+                <li>attack</li>
+                <li>defend</li>
+                <li>define varibale pillars</li>
             </ul></b></div>
         <div id="console"></div>  
     </div>

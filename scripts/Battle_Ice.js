@@ -6,7 +6,7 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
 var staff = new Weapon("Ice Staff", "ice", "close", 100, false, "images/weapons/Ice_Staff.png");
-var armor = new Armor("Ice Armor", "ice", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
+var armor = new Armor("Ice Armor", "ice", "heavy", 100, false, "images/weapons/Ice_Armor.png");
 var iceStone = new Item("Ice Stone", "consumable", false, "images/crystals/White_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Blue_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
