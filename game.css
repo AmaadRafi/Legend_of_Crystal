@@ -145,6 +145,8 @@ button {
 	height: 60%;
 	border-style: solid;
 	border-color: white;
+	overflow: scroll;
+
 }
 .centered{
 	position: absolute;
@@ -211,6 +213,7 @@ button {
 }
 
 .center{
+	
 	text-align: center;
 }
 .startScreenTop{
