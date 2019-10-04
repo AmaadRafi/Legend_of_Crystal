@@ -111,7 +111,7 @@ button {
 	border-color: white;
 	font-family: 'Courier New', Courier, monospace;
 	color: wheat;
-	overflow: hidden;
+	overflow: scroll;
 }
 
 #popup{
