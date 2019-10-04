@@ -180,3 +180,16 @@ button {
 .center{
 	text-align: center;
 }
+
+#health{
+	border: solid;
+	border-color: black;
+}
+
+#health::-webkit-progress-value {
+	background: rgb(66, 255, 66);
+  }
+
+#health::-webkit-progress-bar {
+	background: white;
+  }

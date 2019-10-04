@@ -38,7 +38,7 @@
     
     <div id ="leftScreen">
             <div id="background">
-                    <img id ="map" src="images\floating_maps\firemap.png">
+                    <img id ="map" src="images\floating_maps\Fire.png">
             </div>
         <div id="codeBox">
             <textarea name="Code" id="code">
@@ -58,14 +58,13 @@ if(turn == 4)
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules">
+        <div id="gameRules"><b>
             <div id="battleHeader" class="glowTextFire">Fire Dragon: Eldrake</div>
-            <br/>
-            You must destroy the fire that powers the dragon then attack with 
-            every member of your team to win the battle<br><br>
-            In code, this looks something like: <br>
-            var fire_pit = int;<br>
-            party.attack("enemyName", "partyMember");
+            <br>
+            >HP: 10000 <progress id="health" value="10000" max="10000"></progress>
+            <br><br>
+            >Likes: Nothing.<br><br>
+            >Dislikes: You.<br><br>
         </div>
         <div id="console"></div>  
     </div>
