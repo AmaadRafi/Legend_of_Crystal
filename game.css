@@ -81,6 +81,15 @@ button {
 
 #startBattle{
 	position: absolute;
+	background-color: #1E3E59;
+	font-family: 'Courier New', Courier, monospace;
+	border: none;
+	color: white;
+	padding: 12px 28px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 	top: 20%;
 	left: 23%;
 	border-radius: 10px;
@@ -139,6 +148,8 @@ button {
 }
 .centered{
 	position: absolute;
+	top: 50%;
+	left: 30%;
 	font-family: 'Courier New', Courier, monospace;
 }
 .title{
