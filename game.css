@@ -189,19 +189,17 @@ button {
 
 	position:absolute;
 	left: 16%;
-	top: 20%;
+	top: 15%;
 	width: 70%;
 	z-index: 2;
 }
-
 #health{
 	border: solid;
 	border-color: black;
 }
-
 #health::-webkit-progress-value {
 	background: rgb(66, 255, 66);
-  }
+}
 
 #health::-webkit-progress-bar {
 	background: white;
