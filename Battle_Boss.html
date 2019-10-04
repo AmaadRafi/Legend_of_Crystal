@@ -20,11 +20,10 @@
 <script type="text/javascript" src="scripts/CacheHandler.js"></script>
 <script type="text/javascript" src="scripts/Party.js"></script>
 <script type="text/javascript" src="scripts/Enemy.js"></script>
-<script type="text/javascript" src="scripts/Battle_Earth.js"></script>
-<script type="text/javascript" src="scripts/Transition.js"></script>
+<script type="text/javascript" src="scripts/Battle_Fire.js"></script>
 </head>
 
-<body id="containerEarth">
+<body>
     <script>
         window.onmousedown = function(){
 
@@ -36,36 +35,49 @@
         }
     }
     </script>
+    
     <div id ="leftScreen">
-        <div id="background">
-            <img id ="map" src="images/maps/earth.jpg">
-        </div>
+            <div id="background">
+                    <img id ="map" src="images\floating_maps\firemap.png">
+            </div>
         <div id="codeBox">
-            <textarea name="Code" id="code">party.inventory.showInventory();</textarea>
+            <textarea name="Code" id="code">
+for(var i = 0; i < 100000; i++){
+    gatherEnergy();
+}
+party.attack("fire dragon", "warrior");
+party.attack("fire dragon", "mage");
+party.attack("fire dragon", "ranger");
+
+if(turn == 4)
+    use("Potion");</textarea>
         </div>
         <div id="buttonContainer">
-            <button id="apply" onclick="addScript()">Apply</button>
-            <button id="reset" onclick="reset()">Reset</button>
-            <a id="startBattle" href ="Battle_Earth.html">START BATTLE</a>
+        <button id="apply" onclick="battleFire()">Apply</button>
+        <button id="reset" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    <div id ="rightScreen">
+        <div id="gameRules">
+            <div id="battleHeader" class="glowTextFire">Fire Dragon: Eldrake</div>
+            <br/>
+            You must destroy the fire that powers the dragon then attack with 
+            every member of your team to win the battle<br><br>
+            In code, this looks something like: <br>
+            var fire_pit = int;<br>
+            party.attack("enemyName", "partyMember");
+        </div>
+        <div id="console"></div>  
+    </div>
+    </div>
+
+    <div class="overlay">
+        <div class="modal" id="popup">
+            <button id = "continue" onclick="stateChange()">Continue</button>
+            <button id = "viewLog" onclick="viewLog()">View Battle Log</button>
         </div>
     </div>
 
-    <div id ="rightScreen">
-        <div id="gameRules"><b><br></br>You are preparing to enter the realm of Eryven, the Earth Dragon.
-            <br></br>The dragon is said to hold a legendary armor that <br>may aid you in future battles.
-            <br></br>You must first destroy the pillars that hold up the sacred shrine before the dragon
-            can be defeated.
-            <br></br>Equip your heroes for the battle ahead!<br><br/>
-            <ul>Available Actions<br></br>
-                <li>showInventory();</li>
-                <li>hideInventory();</li>
-                <li>changeWeapon("warrior/mage/ranger", "weaponName");</li>
-                <li>changeArmor("warrior/mage/ranger", "armorName");</li>
-            </ul></b></div>
-        <div id="console"></div>  
-    </div>
-    <div id="overlay"></div>
     <script type="text/javascript" src="scripts/Logger.js"></script>
-    
 </body>
 </html>
