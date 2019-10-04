@@ -47,23 +47,20 @@ function battleEarth(){
     earthEnemy.debugPrintEnemyStats();
     
     try {
-        
         if(pillars <= 5)
             for(var i = 0; i < pillars; i++){
                 
                 console.log("Destroyed pillar " + (i + 1));
             }
-        if(pillars == 5){
+
+        if(pillars == 5)
             taskCompleted = true;
-        }
-        else if(pillars > 5){
+        else if(pillars > 5)
             console.log("You destroyed too many pillars!  The cave starts to collapse!");
-        }
-        else{
+        else
             console.log("You did not destroy all of the pillars!  " + earthEnemy.name + " attacks!");
-        }
     } catch (error) {
-        alert("you did not define the var pillars!  Try again.");
+        alert("You did not define the var pillars!  Try again.");
     }
 
     party.resetStates();
