@@ -131,15 +131,41 @@ button {
     max-height: 100%;
 }
 
-.glowText{
-	animation: GlowAnim 2s linear infinite;
+.glowTextEarth{
+	animation: GlowAnimE 2s linear infinite;
 }
 
-@keyframes GlowAnim {
+@keyframes GlowAnimE {
 	0%, 100% {
-	  color: white;
+	  color: #efff11;
 	}
 	50% {
-	  color: black;
+	  color: #00be39;
+	}
+}
+
+.glowTextFire{
+	animation: GlowAnimF 2s linear infinite;
+}
+
+@keyframes GlowAnimF {
+	0%, 100% {
+	  color: #ff0808;
+	}
+	50% {
+	  color: #ff7b00;
+	}
+}
+
+.glowTextIce{
+	animation: GlowAnimI 2s linear infinite;
+}
+
+@keyframes GlowAnimI {
+	0%, 100% {
+	  color: #0051ff;
+	}
+	50% {
+	  color: #00e1ff;
 	}
 }
