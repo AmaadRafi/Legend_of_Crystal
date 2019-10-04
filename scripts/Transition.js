@@ -24,25 +24,25 @@ $(document).ready(function() {
 		});
 	
 	}
-	$('#container').on('click', 'a', function(e) {
+	// $('#container').on('click', 'a', function(e) {
 		
-		window.history.pushState(null, null, $(this).attr('href'));
+	// 	window.history.pushState(null, null, $(this).attr('href'));
 		
-		anchorClick($(this).attr('href'), "#background");
-		anchorClick("buttonContainer.html", "#buttonContainer");
-		anchorClick("gameRules.html", "#gameRules");
-		anchorClick("overlay.html", "#overlay");
+	// 	anchorClick($(this).attr('href'), "#background");
+	// 	anchorClick("buttonContainer.html", "#buttonContainer");
+	// 	anchorClick("gameRules.html", "#gameRules");
+	// 	anchorClick("overlay.html", "#overlay");
 		
-		e.preventDefault();
+	// 	e.preventDefault();
 
-	});
+	// });
 	
 	$('#containerEarth').on('click', 'a', function(e) {
 		
 		window.history.pushState(null, null, $(this).attr('href'));
 		
 		anchorClick($(this).attr('href'), "#background");
-		anchorClick("buttonContainer.html", "#buttonContainer");
+		anchorClick("buttons_Earth.html", "#buttonContainer");
 		anchorClick("gameRulesEarth.html", "#gameRules");
 		anchorClick("overlay.html", "#overlay");
 		
@@ -55,7 +55,7 @@ $(document).ready(function() {
 		window.history.pushState(null, null, $(this).attr('href'));
 		
 		anchorClick($(this).attr('href'), "#background");
-		anchorClick("buttonContainer.html", "#buttonContainer");
+		anchorClick("buttons_Ice.html", "#buttonContainer");
 		anchorClick("gameRulesIce.html", "#gameRules");
 		anchorClick("overlay.html", "#overlay");
 		
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		window.history.pushState(null, null, $(this).attr('href'));
 		
 		anchorClick($(this).attr('href'), "#background");
-		anchorClick("buttonContainer.html", "#buttonContainer");
+		anchorClick("buttons_Fire.html", "#buttonContainer");
 		anchorClick("gameRulesFire.html", "#gameRules");
 		anchorClick("overlay.html", "#overlay");
 		
