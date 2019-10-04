@@ -20,11 +20,11 @@
 <script type="text/javascript" src="scripts/CacheHandler.js"></script>
 <script type="text/javascript" src="scripts/Party.js"></script>
 <script type="text/javascript" src="scripts/Enemy.js"></script>
-<script type="text/javascript" src="scripts/Battle_Earth.js"></script>
+<script type="text/javascript" src="scripts/Battle_Fire.js"></script>
 <script type="text/javascript" src="scripts/Transition.js"></script>
 </head>
 
-<body id="containerEarth">
+<body id="containerFire">
     <script>
         window.onmousedown = function(){
 
@@ -38,7 +38,7 @@
     </script>
     <div id ="leftScreen">
         <div id="background">
-            <img id ="map" src="images/maps/earth.jpg">
+            <img id ="map" src="images/maps/Fire.jpg">
         </div>
         <div id="codeBox">
             <textarea name="Code" id="code">party.inventory.showInventory();</textarea>
@@ -46,12 +46,11 @@
         <div id="buttonContainer">
             <button id="apply" onclick="addScript()">Apply</button>
             <button id="reset" onclick="reset()">Reset</button>
-            <a id="startBattle" href ="Battle_Earth.html">START BATTLE</a>
+            <button id="startBattle" onclick="window.location.href = 'Battle_Fire.html'">START BATTLE</button>
         </div>
     </div>
-
     <div id ="rightScreen">
-        <div id="gameRules"><b>You are preparing to enter the next battle:<br/>the following
+        <div id="gameRules"><b>You are preparing to enter the Fire battle:<br/>the following
             variables can be initialized: <br/>
             <ul>
                 <li>attack</li>

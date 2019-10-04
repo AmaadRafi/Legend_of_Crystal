@@ -41,11 +41,16 @@
                     <img id ="map" src="images\floating_maps\firemap.png">
             </div>
         <div id="codeBox">
-            <textarea name="Code" id="code">var fire_pit= #;
+            <textarea name="Code" id="code">
+for(var i = 0; i < 100000; i++){
+    gatherEnergy();
+}
+party.attack("fire dragon", "warrior");
+party.attack("fire dragon", "mage");
+party.attack("fire dragon", "ranger");
 
-party.attack("dragon", "warrior");
-party.attack("dragon", "mage");
-party.attack("dragon", "ranger");</textarea>
+if(turn == 4)
+    use("Potion");</textarea>
         </div>
         <div id="buttonContainer">
         <button id="apply" onclick="battleFire()">Apply</button>
@@ -53,7 +58,7 @@ party.attack("dragon", "ranger");</textarea>
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules">You have entered the dragons layer<br><br>
+        <div id="gameRules">Fire Dragon: Eldrake<br><br>
         You must destroy the fire that powers the dragon then attack with 
         every member of your team to win the battle<br><br>
         In code, this looks something like: <br>

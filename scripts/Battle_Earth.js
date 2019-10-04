@@ -13,11 +13,11 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
 var sword = new Weapon("Rock Bow", "earth", "ranged", 100, false, "images/weapons/Crossbow.png");
-var armor = new Armor("Earth Armor", "earth", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
+var armor = new Armor("Earth Armor", "earth", "heavy", 100, false, "images/armor/Earth_Armor.png");
 var earthStone = new Item("Earth Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var earthEnemy = new Enemy("Ogre", 300, sword, armor, [sword, potion, earthStone]);
+var earthEnemy = new Enemy("Earth Dragon", 300, sword, armor, [sword, armor, potion, earthStone]);
 
 var currentEnemy = null;
 var currentParty = null;
@@ -38,12 +38,16 @@ function battleEarth(){
     currentEnemy = earthEnemy;
 
     var taskCompleted = false;
-      
+    
+    party.warrior.debugPrintHeroStats();
+    party.mage.debugPrintHeroStats();
+    party.ranger.debugPrintHeroStats();
+    console.log(" ");
+
     var cm = document.querySelector('.CodeMirror').CodeMirror;
     eval(cm.getValue()); // eval() pastes code from the user into this spot.
+    console.log(" ");
 
-    party.warrior.debugPrintHeroStats();
-    earthEnemy.debugPrintEnemyStats();
     
     try {
         
@@ -52,6 +56,7 @@ function battleEarth(){
                 
                 console.log("Destroyed pillar " + (i + 1));
             }
+            console.log(" ");
         if(pillars == 5){
             taskCompleted = true;
         }

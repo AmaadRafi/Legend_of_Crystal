@@ -10,12 +10,15 @@ var armor = new Armor("Fire Armor", "fire", "heavy", 100, false, "images/armor/F
 var fireStone = new Item("Fire Stone", "consumable", false, "images/crystals/Red_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Red_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var fireEnemy = new Enemy("Dragon", 300, fireStaff, armor, [fireStaff, armor, potion, fireStone]);
+var fireEnemy = new Enemy("Fire Dragon", 10000, fireStaff, armor, [fireStaff, armor, potion, fireStone]);
 
 var currentEnemy = null;
 var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
+var taskCompleted = false;
+var damageOverTime = false;
+var heat = 0;
 
 function battleFire(){
 
@@ -29,45 +32,64 @@ function battleFire(){
     party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, fireEnemy);
     currentParty = party;
     currentEnemy = fireEnemy;
-
-    var taskCompleted = false;
-    var damageOverTime = false;
       
     var cm = document.querySelector('.CodeMirror').CodeMirror;
     party.warrior.debugPrintHeroStats();
     party.mage.debugPrintHeroStats();
     party.ranger.debugPrintHeroStats();
     fireEnemy.debugPrintEnemyStats();
-
+    console.log(" ");
     taskCompleted = true;
 
     for(var turn = 0; turn < 10; turn++){
 
         eval(cm.getValue());
+        if(heat >= 100000){
+            fireEnemy.hitpoints -= 800;
+            console.log(" ");
+            console.log("The fire dragon takes immense damage!");
+            console.log(" ");
+        }
+        if(fireEnemy.hitpoints <= 0){
+            taskCompleted = true;
+            break;
+        }
         if(turn == 3){
             damageOverTime = true;
+            console.log(" ");
             console.log("You have been burned by fire breath!  You will take damage every turn unless"
-            + "you use a potion");
+            + " you use a potion that will heal the party...");
+            console.log(" ");
+        }
+        if(turn == 8){
+            if(party.warrior.armor.name != "EARTH ARMOR"){
+                console.log(" ");
+                console.log("Your warrior's armor melts under the enemy attack!");
+                console.log(" ");
+                taskCompleted = false;
+                break;
+            }
         }
         if(damageOverTime){
             party.warrior.hitpoints -= 20;
             party.mage.hitpoints -= 20;
             party.ranger.hitpoints -= 20;
+            console.log(" ");
             console.log("Party takes damage from fire breath!");
+            console.log(" ");
         }
         if(party.warrior.hitpoints <= 0 && party.mage.hitpoints <= 0 && party.ranger.hitpoints <= 0){
+            console.log(" ");
+            console.log("Party has been defeated!");
+            console.log(" ");
             partyIsAlive = false;
             break;
         }
-        /*if(turn == 5){
-            if(party.warrior.armor.name != "Fire Armor"){
-                taskCompleted = false;
-                break;
-            }
-        }*/
+        heat = 0;
         party.resetStates();
     } // eval() pastes code from the user into this spots
-
+    
+    party.resetStates();
     if(partyIsAlive == false)
         lose();
     else if(taskCompleted == true)
@@ -75,10 +97,23 @@ function battleFire(){
     else
         lose();
 }
+function attack(enemyName, heroType){
+    
+    party.attack(enemyName, heroType);
+}
+function use(itemName){
+
+    var usedItem = party.use("warrior", itemName);
+    if(usedItem)
+        damageOverTime = false;
+}
+function gatherEnergy(){
+    heat++;
+}
 function win(){
 
     bossIsAlive = false;
-
+    party.resetHP();
     var popup = document.getElementById("popup");
 
     popup.innerHTML += "<h1 class='modalWin'>" + currentEnemy.displayName + " was defeated! </h1>";
