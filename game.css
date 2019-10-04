@@ -48,7 +48,6 @@ button {
 	display: inline-block;
 	font-size: 16px;
 }
-
 #apply{
 	position: absolute;
 	right: 55%;
@@ -57,13 +56,11 @@ button {
 	border-width: 10px;
 	font-family: 'Courier New', Courier, monospace
 }
-
 #apply:hover{
 	transition: background-color 0.5s;
 	background-color: green;
 	opacity: .9;
 }
-
 #reset{
 	position: absolute;
 	left: 55%;
@@ -72,7 +69,6 @@ button {
 	border-width: 10px;
 	font-family: 'Courier New', Courier, monospace
 }
-
 #reset:hover{
 	transition: background-color 0.5s;
 	background-color: red;
@@ -95,12 +91,10 @@ button {
 	border-radius: 10px;
 	border-width: 10px;
 }
-
 #startBattle:hover{
 	transition: background-color 0.5s;
 	background-color: yellowgreen;
 }
-
 #rightScreen{
 	position: absolute;
 	width: 34%;
@@ -120,21 +114,17 @@ button {
 	border-color: white;
 	font-family: 'Courier New', Courier, monospace;
 }
-
 #popup{
 	background-color: #2B3E4F;
 	color: white;
 	font-family: 'Courier New', Courier, monospace;
-
 }
-
 .gameRulesBold{
 	background-color:#2B3E4F;
 	color:wheat;
 	font-family: 'Courier New', Courier, monospace;
 	font-weight: 900;
 }
-
 #gameRules{
 	background-color:#2B3E4F;
 	font-family: 'Courier New', Courier, monospace;
@@ -145,8 +135,6 @@ button {
 	height: 60%;
 	border-style: solid;
 	border-color: white;
-	overflow: scroll;
-
 }
 .centered{
 	position: absolute;
@@ -165,18 +153,15 @@ button {
     max-width: 100%;
     max-height: 100%;
 }
-
 #battleHeader{
 	margin-top: 10px;
 	font-family: Arial Black;
 	text-align: center;
 	font-size: 30px;
 }
-
 .glowTextEarth{
 	animation: GlowAnimE 2s linear infinite;
 }
-
 @keyframes GlowAnimE {
 	0%, 100% {
 	  color: #b5e20f;
@@ -185,11 +170,9 @@ button {
 	  color: #00be39;
 	}
 }
-
 .glowTextFire{
 	animation: GlowAnimF 2s linear infinite;
 }
-
 @keyframes GlowAnimF {
 	0%, 100% {
 	  color: #c00000;
@@ -198,11 +181,9 @@ button {
 	  color: #ff7b00;
 	}
 }
-
 .glowTextIce{
 	animation: GlowAnimI 2s linear infinite;
 }
-
 @keyframes GlowAnimI {
 	0%, 100% {
 	  color: #0051ff;
@@ -211,18 +192,14 @@ button {
 	  color: #00e1ff;
 	}
 }
-
 .center{
-	
 	text-align: center;
 }
 .startScreenTop{
-
 	  position:absolute;
       z-index: 1;
 }
 .startScreenBottom{
-
 	position:absolute;
 	left: 16%;
 	top: 15%;
@@ -236,7 +213,6 @@ button {
 #health::-webkit-progress-value {
 	background: rgb(66, 255, 66);
 }
-
 #health::-webkit-progress-bar {
 	background: white;
   }
@@ -267,4 +243,3 @@ button {
 	right: 12%;
 	visibility: hidden;
 }
-  
