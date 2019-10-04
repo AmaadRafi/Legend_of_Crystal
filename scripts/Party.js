@@ -65,6 +65,7 @@ class Party {
         alert(heroName + " not found"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
 }
+
 class BattleParty extends Party{
 
     constructor(warrior, mage, ranger, inventory, currentEnemy){
@@ -90,6 +91,7 @@ class BattleParty extends Party{
         else{
             console.log(enemyName + " is not the current enemy.  Try again.");
         }
+        console.log("\n");
     }
     use(heroType, item){
         var hero = this.selectHero(heroType);

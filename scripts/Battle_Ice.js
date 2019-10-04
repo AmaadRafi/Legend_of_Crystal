@@ -5,17 +5,18 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-var staff = new Weapon("Snowman", "ice", "close", 100, false, "images/weapons/Ice_Staff.png");
-var armor = new Armor("Snowman Armor", "fire", "heavy", 100, false, "images/weaponsShield.png");
-var iceStone = new Item("Ice Stone", "consumable", false, "images/crystals/Blue_Crystal.jpg");
+var staff = new Weapon("Ice Staff", "ice", "close", 100, false, "images/weapons/Ice_Staff.png");
+var armor = new Armor("Ice Armor", "ice", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
+var iceStone = new Item("Ice Stone", "consumable", false, "images/crystals/White_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Blue_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var snowEnemy = new Enemy("snowman", 300, staff , armor, [staff, potion, iceStone]);
+var iceEnemy = new Enemy("ISSVERN", 2000, staff , armor, [staff, potion, iceStone]);
 
 var currentEnemy = null;
 var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
+var defend = false;
 
 function battleIce(){
 
@@ -26,43 +27,83 @@ function battleIce(){
         return;
     }
     
-    party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, snowEnemy);
+    party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, iceEnemy);
     currentParty = party;
-    currentEnemy = snowEnemy;
+    currentEnemy = iceEnemy;
 
     var taskCompleted = false;
-      
     var cm = document.querySelector('.CodeMirror').CodeMirror;
-    eval(cm.getValue()); // eval() pastes code from the user into this spot.
 
     party.warrior.debugPrintHeroStats();
-    snowEnemy.debugPrintEnemyStats();
+    iceEnemy.debugPrintEnemyStats();
+
+    for(var turn = 1; turn <= 10; turn++) {
+        if((party.warrior.hitpoints + party.ranger.hitpoints + party.mage.hitpoints) <= 0){
+            partyIsAlive = false; 
+            lose();
+            
+        }
+
+        console.log("Turn = " + (turn));
     
-    try {
-        
-        
-        if(torch == true){
-            console.log("Snowman has been weakened!");
+        eval(cm.getValue());
+
+        if(turn%2 == 0) { // even turns = boss turns
+            if((turn == 8)) {
+                if(!defend){
+                    iceEnemy.attack(party.mage, 100);
+                    iceEnemy.attack(party.warrior, 100);
+                    iceEnemy.attack(party.ranger, 100);
+                    console.log("ISSBERN used Hail.")
+                    console.log("You have been frozen for eternity.\n");
+
+                    break;
+                } else {
+                    console.log("ISSVERN used Hail.")
+                    console.log("You blocked it!");
+                    taskCompleted = true;
+                }
+            } else {
+                if(turn < 8)
+                console.log("The dragon seems to be charging an attack.");
+            }
+        }
+
+        party.resetStates();
+    } 
+               
+        if(iceEnemy.hitpoints <= 0) {
             taskCompleted = true;
-
         }
-        else if(torch!=true){
-            console.log("you did not set torch= true!");
+
+        if(party.hitpoints <= 0){
+            partyIsAlive = false;
+            //lose();
         }
-      
-    } catch (error) {
-        alert("you did not define the var torch!  Try again.");
-    }
 
-    party.resetStates();
-
-    if(snowEnemy.hitpoints <= 0 && taskCompleted == true)
+    if(iceEnemy.hitpoints <= 0 && taskCompleted == true)
         win();
     else
         lose();
 }
-function win(){
 
+function blockIceAttack(){
+    defend = true;
+}
+
+function partyAttack() {
+    party.attack("ISSVERN", "mage");
+    party.attack("ISSVERN", "warrior");
+    party.attack("ISSVERN", "ranger");
+}
+
+function enemyAttack() {
+    iceEnemy.attack(party.mage);
+    iceEnemy.attack(party.warrior);
+    iceEnemy.attack(party.ranger);
+}
+
+function win(){
     bossIsAlive = false;
 
     var popup = document.getElementById("popup");
@@ -76,6 +117,7 @@ function win(){
     playOutcomeSound("sounds/Victory.mp3");
     showOverlay();
 }
+
 function lose(){
 
     partyIsAlive = false;
