@@ -157,11 +157,7 @@ button {
 
 @keyframes GlowAnimF {
 	0%, 100% {
-<<<<<<< HEAD
-	  color: #ff0808;
-=======
 	  color: #c00000;
->>>>>>> b835f59a08defc9599fe4bfbcc9868a9ef7ab57c
 	}
 	50% {
 	  color: #ff7b00;
@@ -179,4 +175,8 @@ button {
 	50% {
 	  color: #00e1ff;
 	}
+}
+
+.center{
+	text-align: center;
 }
