@@ -24,7 +24,7 @@
 <script type="text/javascript" src="scripts/Transition.js"></script>
 </head>
 
-<body id="container">
+<body id="containerEarth">
     <script>
         window.onmousedown = function(){
 
@@ -46,17 +46,18 @@
         <div id="buttonContainer">
             <button id="apply" onclick="addScript()">Apply</button>
             <button id="reset" onclick="reset()">Reset</button>
-            <a id="startBattle" href="Battle_Earth.html">START BATTLE</a>
+            <button id="startBattle" onclick="window.location.href = 'Battle_Earth.html'">START BATTLE</button>
         </div>
     </div>
+
     <div id ="rightScreen">
-        <div id="gameRules">You have entered the realm of the Earth Boss<br><br>
-        You must destroy the 5 pillars surrounding the boss and then attack with 
-        every member of your team to win the battle<br><br>
-        In code, this looks something like: <br>
-        var pillars = 0;<br>
-        party.attack("enemyName", "partyMember");
-        </div>
+        <div id="gameRules"><b>You are preparing to enter the next battle:<br/>the following
+            variables can be initialized: <br/>
+            <ul>
+                <li>attack</li>
+                <li>defend</li>
+                <li>define varibale pillars</li>
+            </ul></b></div>
         <div id="console"></div>  
     </div>
     <div id="overlay"></div>

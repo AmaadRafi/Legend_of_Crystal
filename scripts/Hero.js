@@ -254,11 +254,13 @@ class HeroRanger extends Hero{
         var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
 
         heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
-            heroObject.weapon.weaponType, heroObject.weapon.attackPower, heroObject.weapon.isConsumable,);
+            heroObject.weapon.weaponType, heroObject.weapon.attackPower, 
+            heroObject.weapon.isConsumable, heroObject.weapon.imageSource);
 
         heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
-            heroObject.armor.armorType, heroObject.armor.defenseValue, heroObject.armor.isConsumable);
-
+            heroObject.armor.armorType, heroObject.armor.defenseValue, 
+            heroObject.armor.isConsumable, heroObject.armor.imageSource);
+            
         return heroObject;
     }
 }

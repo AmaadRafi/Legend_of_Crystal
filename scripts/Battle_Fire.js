@@ -5,12 +5,12 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
-var fire = new Weapon("Ogre Sword", "fire", "close", 100, false, "images/weapons/Heavy_Sword.png");
-var armor = new Armor("Ogre Armor", "fire", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
-var fireStone = new Item("fire Stone", "consumable", false, "images/crystals/Green_Crystal.jpg");
-var potion = new Item("Potion", "consumable", true, "images/items/Yellow_Potion.png");
+var fireStaff = new Weapon("Flame Staff", "fire", "magic", 100, false, "images/weapons/Flame_Staff.png");
+var armor = new Armor("Fire Armor", "fire", "heavy", 100, false, "images/armor/Fire_Armor.png");
+var fireStone = new Item("Fire Stone", "consumable", false, "images/crystals/Red_Crystal.jpg");
+var potion = new Item("Potion", "consumable", true, "images/items/Red_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var fireEnemy = new Enemy("dragon", 300, fire , armor, [fire, potion, fireStone]);
+var fireEnemy = new Enemy("Dragon", 300, fireStaff, armor, [fireStaff, armor, potion, fireStone]);
 
 var currentEnemy = null;
 var currentParty = null;
@@ -31,36 +31,46 @@ function battleFire(){
     currentEnemy = fireEnemy;
 
     var taskCompleted = false;
+    var damageOverTime = false;
       
     var cm = document.querySelector('.CodeMirror').CodeMirror;
-    eval(cm.getValue()); // eval() pastes code from the user into this spot.
-
     party.warrior.debugPrintHeroStats();
+    party.mage.debugPrintHeroStats();
+    party.ranger.debugPrintHeroStats();
     fireEnemy.debugPrintEnemyStats();
-    
-    try {
-        
-        if(fire_pit <= 4)
-            for(var i = 0; i < fire_pit; i++){
-                
-                console.log("destroyed Fire pit " + (i + 1));
+
+    taskCompleted = true;
+
+    for(var turn = 0; turn < 10; turn++){
+
+        eval(cm.getValue());
+        if(turn == 3){
+            damageOverTime = true;
+            console.log("You have been burned by fire breath!  You will take damage every turn unless"
+            + "you use a potion");
+        }
+        if(damageOverTime){
+            party.warrior.hitpoints -= 20;
+            party.mage.hitpoints -= 20;
+            party.ranger.hitpoints -= 20;
+            console.log("Party takes damage from fire breath!");
+        }
+        if(party.warrior.hitpoints <= 0 && party.mage.hitpoints <= 0 && party.ranger.hitpoints <= 0){
+            partyIsAlive = false;
+            break;
+        }
+        /*if(turn == 5){
+            if(party.warrior.armor.name != "Fire Armor"){
+                taskCompleted = false;
+                break;
             }
-        if(fire_pit == 4){
-            taskCompleted = true;
-        }
-        else if(fire_pit > 4){
-            console.log("There are only 4 fire pits!");
-        }
-        else{
-            console.log("You did not destroy all the fire pits!  " + fireEnemy.name + " attacks!");
-        }
-    } catch (error) {
-        alert("you did not define the var fire_pits!  Try again.");
-    }
+        }*/
+        party.resetStates();
+    } // eval() pastes code from the user into this spots
 
-    party.resetStates();
-
-    if(fireEnemy.hitpoints <= 0 && taskCompleted == true)
+    if(partyIsAlive == false)
+        lose();
+    else if(taskCompleted == true)
         win();
     else
         lose();

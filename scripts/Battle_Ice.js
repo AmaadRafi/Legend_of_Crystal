@@ -5,9 +5,15 @@ var inventoryObject = CacheHandler.getFromCache("inventory");
 
 var party = new Party(warriorObject, mageObject, rangerObject, inventoryObject);
 
+<<<<<<< HEAD
 var staff = new Weapon("Ice Staff", "ice", "close", 100, false, "images/weapons/Ice_Staff.png");
 var armor = new Armor("Ice Armor", "ice", "heavy", 100, false, "images/weapons/Heavy_Sword.png");
 var iceStone = new Item("Ice Stone", "consumable", false, "images/crystals/White_Crystal.jpg");
+=======
+var staff = new Weapon("Snowman", "ice", "close", 100, false, "images/weapons/Ice_Staff.png");
+var armor = new Armor("Snowman Armor", "fire", "heavy", 100, false, "images/weaponsShield.png");
+var iceStone = new Item("Ice Stone", "consumable", false, "images/crystals/Blue_Crystal.jpg");
+>>>>>>> da9bac0a2a110f4ce03c9632dfe52fbb3edd1330
 var potion = new Item("Potion", "consumable", true, "images/items/Blue_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
 var iceEnemy = new Enemy("ISSVERN", 2000, staff , armor, [staff, potion, iceStone]);
@@ -46,6 +52,7 @@ function battleIce(){
 
         console.log("Turn = " + (turn));
         
+<<<<<<< HEAD
         eval(cm.getValue());
 
         if(turn%2 == 0) { // even turns = boss turns
