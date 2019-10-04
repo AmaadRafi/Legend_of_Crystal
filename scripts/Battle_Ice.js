@@ -16,6 +16,7 @@ var currentEnemy = null;
 var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
+var battleStarted = false;
 var defend = false;
 
 function battleIce(){
@@ -30,6 +31,7 @@ function battleIce(){
     party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, iceEnemy);
     currentParty = party;
     currentEnemy = iceEnemy;
+    battleStarted = true;
 
     var taskCompleted = false;
     var cm = document.querySelector('.CodeMirror').CodeMirror;
@@ -93,19 +95,32 @@ function battleIce(){
 function blockIceAttack(){
     defend = true;
 }
-
 function partyAttack() {
     party.attack("ISSVERN", "mage");
     party.attack("ISSVERN", "warrior");
     party.attack("ISSVERN", "ranger");
 }
-
 function enemyAttack() {
     iceEnemy.attack(party.mage);
     iceEnemy.attack(party.warrior);
     iceEnemy.attack(party.ranger);
 }
-
+function changeWeapon(heroType, weaponName){
+    party.changeWeapon(heroType, weaponName);
+}
+function changeArmor(heroType, armorName){
+    party.changeArmor(heroType, armorName);
+}
+function use(itemName){
+    var usedItem = party.use("warrior", itemName);
+}
+function showInventory(){
+    if(!battleStarted)
+        party.inventory.showInventory();
+}
+function hideInventory(){
+    party.inventory.hideInventory();
+}
 function win(){
     bossIsAlive = false;
 

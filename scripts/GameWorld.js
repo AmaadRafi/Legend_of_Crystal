@@ -17,7 +17,6 @@ function goToEarth(){
     window.setTimeout(moveUp, 6500);
     window.setTimeout(stop, 8000);
 }
-
 function goToIce()
 {
     moveChar('up');
@@ -47,8 +46,6 @@ function goToFire()
     window.setTimeout(stop, 10800);
     window.setTimeout(moveUp, 11000);
     window.setTimeout(stop, 11800);
-    
-
 }
 function moveUp(){
     
@@ -63,7 +60,6 @@ function moveLeft(){
 function moveDown(){
     moveChar('down');
 }
-
 function collidesWith (element1, element2) {
     var Element1 = {};
     var Element2 = {};

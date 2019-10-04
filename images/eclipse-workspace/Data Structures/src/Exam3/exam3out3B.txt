@@ -1,0 +1,158 @@
+Jason Nichols-Allen	Exam3 Part3B
+
+ID: 20         Artist: Rath          Entries: 5          Total Value: 35950                      
+	Art ID: 1029   Title: Horseshoe Falls             Value: 15000        
+	Art ID: 1062   Title: Cowboy and Saddle           Value: 18000        
+	Art ID: 1092   Title: Dressing Up                 Value: 1300         
+	Art ID: 1099   Title: Watch That Rattler          Value: 900          
+	Art ID: 1100   Title: Hungry Cowboys              Value: 750          
+
+ID: 19         Artist: Quiroz        Entries: 5          Total Value: 39875                      
+	Art ID: 1011   Title: Eve                         Value: 975          
+	Art ID: 1045   Title: Leaf Patterns               Value: 2100         
+	Art ID: 1065   Title: Moonlite                    Value: 1300         
+	Art ID: 1106   Title: Horse Corral                Value: 12500        
+	Art ID: 1116   Title: Apache Warrior              Value: 23000        
+
+ID: 18         Artist: Prinzen       Entries: 5          Total Value: 58000                      
+	Art ID: 1005   Title: The Hang                    Value: 8000         
+	Art ID: 1040   Title: Night on the Praire         Value: 1300         
+	Art ID: 1082   Title: Spring Flowers              Value: 20000        
+	Art ID: 1088   Title: Lessons                     Value: 3700         
+	Art ID: 1094   Title: Life Is Sweet               Value: 25000        
+
+ID: 17         Artist: Pierobon      Entries: 5          Total Value: 29300                      
+	Art ID: 1007   Title: Homage to the Ancestors     Value: 1200         
+	Art ID: 1035   Title: Nature/Nurture              Value: 1300         
+	Art ID: 1041   Title: Night Version               Value: 3800         
+	Art ID: 1051   Title: Night Version               Value: 7000         
+	Art ID: 1059   Title: Dwelling                    Value: 16000        
+
+ID: 16         Artist: Penn          Entries: 5          Total Value: 61950                      
+	Art ID: 1027   Title: Mountain Climber            Value: 4700         
+	Art ID: 1052   Title: American Rodeo              Value: 3500         
+	Art ID: 1078   Title: Chuckwagon                  Value: 32000        
+	Art ID: 1087   Title: Three Woman                 Value: 20000        
+	Art ID: 1107   Title: Striking It Rich            Value: 1750         
+
+ID: 15         Artist: Parker        Entries: 5          Total Value: 36800                      
+	Art ID: 1023   Title: Shooting the Rapids         Value: 1300         
+	Art ID: 1031   Title: Inside/Out                  Value: 3500         
+	Art ID: 1043   Title: Creosote Bushes             Value: 18000        
+	Art ID: 1073   Title: Dancing in the Light        Value: 4000         
+	Art ID: 1105   Title: Meteor Show                 Value: 10000        
+
+ID: 14         Artist: Ortega        Entries: 9          Total Value: 60200                      
+	Art ID: 1006   Title: House Remembered            Value: 700          
+	Art ID: 1009   Title: Amen                        Value: 3000         
+	Art ID: 1014   Title: Plenty                      Value: 500          
+	Art ID: 1015   Title: Punch                       Value: 10000        
+	Art ID: 1030   Title: Ash Bench                   Value: 13000        
+	Art ID: 1039   Title: Treachery                   Value: 20000        
+	Art ID: 1046   Title: Immediate Gratification     Value: 1500         
+	Art ID: 1076   Title: Ride the Bronco             Value: 1500         
+	Art ID: 1102   Title: Crying Hats                 Value: 10000        
+
+ID: 13         Artist: Novarre       Entries: 2          Total Value: 8650                       
+	Art ID: 1081   Title: Coming Under Fire           Value: 650          
+	Art ID: 1112   Title: Dark Canyon                 Value: 8000         
+
+ID: 12         Artist: Metz          Entries: 2          Total Value: 4300                       
+	Art ID: 1003   Title: Spring Flowers              Value: 2400         
+	Art ID: 1008   Title: End of the Path             Value: 1900         
+
+ID: 11         Artist: Lerman        Entries: 2          Total Value: 16500                      
+	Art ID: 1090   Title: Off the Grid                Value: 8000         
+	Art ID: 1115   Title: Starry Night                Value: 8500         
+
+ID: 10         Artist: Kollasch      Entries: 7          Total Value: 37125                      
+	Art ID: 1028   Title: Tired Cowboy                Value: 4700         
+	Art ID: 1047   Title: Medicine Man                Value: 2500         
+	Art ID: 1048   Title: Comfy Chair                 Value: 800          
+	Art ID: 1072   Title: Funnel                      Value: 4500         
+	Art ID: 1089   Title: Life Lessons                Value: 4125         
+	Art ID: 1096   Title: Ceremonial Sticks           Value: 15000        
+	Art ID: 1113   Title: Shadow House                Value: 5500         
+
+ID: 9          Artist: Ibe           Entries: 7          Total Value: 59792                      
+	Art ID: 1001   Title: Red Rock Mountain           Value: 18000        
+	Art ID: 1002   Title: Offerings                   Value: 10000        
+	Art ID: 1044   Title: Mexican Fiesta              Value: 14000        
+	Art ID: 1055   Title: Starlit Evening             Value: 9500         
+	Art ID: 1069   Title: Renaissance                 Value: 5500         
+	Art ID: 1084   Title: Crossing the Platt River    Value: 2200         
+	Art ID: 1098   Title: Sweet Project               Value: 592          
+
+ID: 8          Artist: Higgins       Entries: 9          Total Value: 55700                      
+	Art ID: 1018   Title: Mountain Scene              Value: 2500         
+	Art ID: 1057   Title: Untitled                    Value: 4500         
+	Art ID: 1060   Title: Story Sticks                Value: 650          
+	Art ID: 1064   Title: Spirit Columns              Value: 7000         
+	Art ID: 1067   Title: Owl in Flight               Value: 7000         
+	Art ID: 1068   Title: Moonlight                   Value: 9750         
+	Art ID: 1071   Title: Ride the Rapids             Value: 300          
+	Art ID: 1074   Title: Storm on the Rise           Value: 8000         
+	Art ID: 1109   Title: Friends                     Value: 16000        
+
+ID: 7          Artist: Garber        Entries: 9          Total Value: 46862                      
+	Art ID: 1024   Title: Spirit and Nature           Value: 592          
+	Art ID: 1026   Title: Untitled (couple)           Value: 4000         
+	Art ID: 1032   Title: Rising Sun                  Value: 2000         
+	Art ID: 1037   Title: Floating World              Value: 2350         
+	Art ID: 1049   Title: Buttercup with Red Lip      Value: 400          
+	Art ID: 1054   Title: Snake Charmer               Value: 4500         
+	Art ID: 1061   Title: Untitled Mural              Value: 3520         
+	Art ID: 1091   Title: Stone Palette               Value: 11500        
+	Art ID: 1114   Title: Storytelling at the CampfireValue: 18000        
+
+ID: 6          Artist: Fleming       Entries: 15         Total Value: 174600                     
+	Art ID: 1004   Title: Seeking Shelter             Value: 52000        
+	Art ID: 1012   Title: Man on Horseback            Value: 8000         
+	Art ID: 1016   Title: Untitled                    Value: 6000         
+	Art ID: 1017   Title: Brittlecone                 Value: 1300         
+	Art ID: 1033   Title: Untitled (Woman abstract)   Value: 2500         
+	Art ID: 1053   Title: Blue Eyed Indian            Value: 40000        
+	Art ID: 1056   Title: Cavalry Is Coming           Value: 1900         
+	Art ID: 1066   Title: Untitled (still life)       Value: 19500        
+	Art ID: 1075   Title: Western Boots and Spurs     Value: 6000         
+	Art ID: 1077   Title: Bull Riding                 Value: 5200         
+	Art ID: 1083   Title: Untitled                    Value: 2500         
+	Art ID: 1085   Title: Traces                      Value: 20000        
+	Art ID: 1097   Title: Untitled (Sea)              Value: 2800         
+	Art ID: 1108   Title: Untitled Mural              Value: 400          
+	Art ID: 1110   Title: Three Sisters               Value: 6500         
+
+ID: 5          Artist: Edwards       Entries: 3          Total Value: 41000                      
+	Art ID: 1020   Title: Untitled (Man holding coat) Value: 3000         
+	Art ID: 1036   Title: Blackhawk                   Value: 25500        
+	Art ID: 1093   Title: Antelopes                   Value: 12500        
+
+ID: 4          Artist: Dill          Entries: 3          Total Value: 38700                      
+	Art ID: 1070   Title: Beginnings                  Value: 27500        
+	Art ID: 1079   Title: Carrying the Mail           Value: 8000         
+	Art ID: 1111   Title: Untitled (man and crucifix) Value: 3200         
+
+ID: 3          Artist: Carpenter     Entries: 12         Total Value: 284975                     
+	Art ID: 1010   Title: Untitled (land with adobe)  Value: 800          
+	Art ID: 1013   Title: Superstitions               Value: 78000        
+	Art ID: 1019   Title: The White Heart             Value: 9300         
+	Art ID: 1021   Title: Bead Wall                   Value: 14000        
+	Art ID: 1022   Title: The Cowboy                  Value: 4200         
+	Art ID: 1025   Title: Profile of a Woman          Value: 625          
+	Art ID: 1034   Title: Beaver Pole Jumble          Value: 28000        
+	Art ID: 1058   Title: The Gathering               Value: 250          
+	Art ID: 1063   Title: Asleep in the Garden        Value: 110000       
+	Art ID: 1080   Title: The Dust Behind             Value: 18000        
+	Art ID: 1095   Title: The Spirit                  Value: 20000        
+	Art ID: 1104   Title: Untitled                    Value: 1800         
+
+ID: 2          Artist: Budd          Entries: 3          Total Value: 35544                      
+	Art ID: 1042   Title: Coffee on the Trail         Value: 7544         
+	Art ID: 1086   Title: Untitled (desert landscape) Value: 18000        
+	Art ID: 1101   Title: The Red Door                Value: 10000        
+
+ID: 1          Artist: Acconci       Entries: 3          Total Value: 18800                      
+	Art ID: 1038   Title: Spring Flowers              Value: 800          
+	Art ID: 1050   Title: Cattle Ranch                Value: 10000        
+	Art ID: 1103   Title: Trail End                   Value: 8000         
+

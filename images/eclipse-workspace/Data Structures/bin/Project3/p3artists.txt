@@ -1,0 +1,79 @@
+Method 3: Jason Nichols-Allen
+
+Total Entries: 74
+
+ID: 1          Artist: Acconci       Art ID: 0           Title: null                             Value: 0  
+ID: 2          Artist: Ames          Art ID: 0           Title: null                             Value: 0  
+ID: 3          Artist: Aserty        Art ID: 0           Title: null                             Value: 0  
+ID: 4          Artist: Baron         Art ID: 0           Title: null                             Value: 0  
+ID: 5          Artist: Battenberg    Art ID: 0           Title: null                             Value: 0  
+ID: 6          Artist: Bindner       Art ID: 0           Title: null                             Value: 0  
+ID: 7          Artist: Blain         Art ID: 0           Title: null                             Value: 0  
+ID: 8          Artist: Blum          Art ID: 0           Title: null                             Value: 0  
+ID: 9          Artist: Budd          Art ID: 0           Title: null                             Value: 0  
+ID: 10         Artist: Cardenas      Art ID: 0           Title: null                             Value: 0  
+null
+ID: 12         Artist: Chico         Art ID: 0           Title: null                             Value: 0  
+ID: 13         Artist: Colvin        Art ID: 0           Title: null                             Value: 0  
+ID: 14         Artist: Cox           Art ID: 0           Title: null                             Value: 0  
+ID: 15         Artist: Cridler       Art ID: 0           Title: null                             Value: 0  
+null
+ID: 17         Artist: Dawson        Art ID: 0           Title: null                             Value: 0  
+ID: 18         Artist: DiGrigoro     Art ID: 0           Title: null                             Value: 0  
+ID: 19         Artist: Dill          Art ID: 0           Title: null                             Value: 0  
+ID: 20         Artist: Edwards       Art ID: 0           Title: null                             Value: 0  
+null
+ID: 22         Artist: Fratt         Art ID: 0           Title: null                             Value: 0  
+ID: 23         Artist: Garber        Art ID: 0           Title: null                             Value: 0  
+ID: 24         Artist: Garin         Art ID: 0           Title: null                             Value: 0  
+ID: 25         Artist: Giama         Art ID: 0           Title: null                             Value: 0  
+ID: 26         Artist: Gilhooly      Art ID: 0           Title: null                             Value: 0  
+ID: 27         Artist: Gonzales      Art ID: 0           Title: null                             Value: 0  
+ID: 28         Artist: Guys          Art ID: 0           Title: null                             Value: 0  
+ID: 29         Artist: Hamend        Art ID: 0           Title: null                             Value: 0  
+ID: 30         Artist: Higgins       Art ID: 0           Title: null                             Value: 0  
+null
+ID: 32         Artist: Ibe           Art ID: 0           Title: null                             Value: 0  
+ID: 33         Artist: Indiana       Art ID: 0           Title: null                             Value: 0  
+ID: 34         Artist: Ingraham      Art ID: 0           Title: null                             Value: 0  
+ID: 35         Artist: Irvin         Art ID: 0           Title: null                             Value: 0  
+ID: 36         Artist: Kerrihard     Art ID: 0           Title: null                             Value: 0  
+ID: 37         Artist: Kollasch      Art ID: 0           Title: null                             Value: 0  
+ID: 38         Artist: Kritz         Art ID: 0           Title: null                             Value: 0  
+ID: 39         Artist: Lerman        Art ID: 0           Title: null                             Value: 0  
+ID: 40         Artist: Long          Art ID: 0           Title: null                             Value: 0  
+null
+ID: 42         Artist: Lundquist     Art ID: 0           Title: null                             Value: 0  
+ID: 43         Artist: Lutes         Art ID: 0           Title: null                             Value: 0  
+ID: 44         Artist: Maglich       Art ID: 0           Title: null                             Value: 0  
+ID: 45         Artist: McGraw        Art ID: 0           Title: null                             Value: 0  
+null
+ID: 47         Artist: Meglech       Art ID: 0           Title: null                             Value: 0  
+ID: 48         Artist: Metz          Art ID: 0           Title: null                             Value: 0  
+ID: 49         Artist: Miller        Art ID: 0           Title: null                             Value: 0  
+ID: 50         Artist: Mogan         Art ID: 0           Title: null                             Value: 0  
+null
+ID: 52         Artist: Novarre       Art ID: 0           Title: null                             Value: 0  
+ID: 53         Artist: Odiezma       Art ID: 0           Title: null                             Value: 0  
+ID: 54         Artist: Ortega        Art ID: 0           Title: null                             Value: 0  
+null
+ID: 56         Artist: Penn          Art ID: 0           Title: null                             Value: 0  
+ID: 57         Artist: Pierobon      Art ID: 0           Title: null                             Value: 0  
+ID: 58         Artist: Prinzen       Art ID: 0           Title: null                             Value: 0  
+ID: 59         Artist: Quiroz        Art ID: 0           Title: null                             Value: 0  
+ID: 60         Artist: Rath          Art ID: 0           Title: null                             Value: 0  
+ID: 61         Artist: Reed          Art ID: 0           Title: null                             Value: 0  
+ID: 62         Artist: Rogers        Art ID: 0           Title: null                             Value: 0  
+ID: 63         Artist: Roman         Art ID: 0           Title: null                             Value: 0  
+ID: 64         Artist: Shenal        Art ID: 0           Title: null                             Value: 0  
+ID: 65         Artist: Statom        Art ID: 0           Title: null                             Value: 0  
+ID: 66         Artist: Swartz        Art ID: 0           Title: null                             Value: 0  
+ID: 67         Artist: Turrell       Art ID: 0           Title: null                             Value: 0  
+ID: 68         Artist: Udinotti      Art ID: 0           Title: null                             Value: 0  
+ID: 69         Artist: Van Coller    Art ID: 0           Title: null                             Value: 0  
+ID: 70         Artist: Werner        Art ID: 0           Title: null                             Value: 0  
+ID: 71         Artist: Wright        Art ID: 0           Title: null                             Value: 0  
+ID: 72         Artist: Xie           Art ID: 0           Title: null                             Value: 0  
+ID: 73         Artist: Yasami        Art ID: 0           Title: null                             Value: 0  
+ID: 74         Artist: Zischke       Art ID: 0           Title: null                             Value: 0  
+null

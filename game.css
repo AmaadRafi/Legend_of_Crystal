@@ -110,16 +110,13 @@ button {
 	border-style: solid;
 	border-color: white;
 	font-family: 'Courier New', Courier, monospace;
-	color: wheat;
-	overflow: scroll;
 }
 
 #popup{
 	background-color: #2B3E4F;
 	color: white;
 	font-family: 'Courier New', Courier, monospace;
-	margin: auto;
-  	width: 50%;
+
 }
 
 .gameRulesBold{
@@ -140,14 +137,8 @@ button {
 	border-style: solid;
 	border-color: white;
 }
-
-.modalLose{
-	  text-align: center;
-}
 .centered{
 	position: absolute;
-	top: 50%;
-	left: 30%;
 	font-family: 'Courier New', Courier, monospace;
 }
 .title{

@@ -1,0 +1,120 @@
+1116 Apache Warrior Higgins 30 	23000	 
+1115 Starry Night Giama 25 	8500	 
+1114 Storytelling at the Campfire Mogan 50 	18000	 
+1113 Shadow House Mogan 50 	5500	 
+1112 Dark Canyon Gonzales 27 	8000	 
+1111 Untitled (man and crucifix) Unknown Artist 72 	3200	 
+1110 Three Sisters Unknown Artist 62 	6500	 
+1109 Friends Fratt 22 	16000	 
+1108 Untitled Mural Unknown Artist 77 	400	 
+1107 Striking It Rich Irvin 35 	1750	 
+1106 Horse Corral Long 40 	12500	 
+1105 Meteor Show Unknown Artist 80 	10000	 
+1104 Untitled  Unknown Artist 70 	1800	 
+1103 Trail End Acconci 1 	8000	 
+1102 Crying Hats Cox 14 	10000	 
+1101 The Red Door Prinzen 58 	10000	 
+1100 Hungry Cowboys Kritz 38 	750	 
+1099 Watch That Rattler Edwards 20 	900	 
+1098 Sweet Project Penn 56 	592	 
+1097 Untitled (Sea) Unknown Artist 75 	2800	 
+1096 Ceremonial Sticks Cardenas 10 	15000	 
+1095 The Spirit Unknown Artist 61 	20000	 
+1094 Life Is Sweet Lerman 39 	25000	 
+1093 Antelopes  Unknown Artist 62 	12500	 
+1092 Dressing Up Meglech 47 	1300	 
+1091 Stone Palette Ortega 54 	11500	 
+1090 Off the Grid Carpenter 11 	8000	 
+1089 Life Lessons Odiezma 53 	4125	 
+1088 Lessons Kollasch 37 	3700	 
+1087 Three Woman Unknown Artist 81 	20000	 
+1086 Untitled (desert landscape) Unknown Artist 67 	18000	 
+1085 Traces Unknown Artist 63 	20000	 
+1084 Crossing the Platt River Garber 23 	2200	 
+1083 Untitled Unknown Artist 64 	2500	 
+1082 Spring Flowers Hamend 29 	20000	 
+1081 Coming Under Fire Colvin 13 	650	 
+1080 The Dust Behind Quiroz 59 	18000	 
+1079 Carrying the Mail Unknown Artist 62 	8000	 
+1078 Chuckwagon Guys 28 	32000	 
+1077 Bull Riding Bindner 6 	5200	 
+1076 Ride the Bronco Unknown Artist 79 	1500	 
+1075 Western Boots and Spurs Bindner 6 	6000	 
+1074 Storm on the Rise Parker 55 	8000	 
+1073 Dancing in the Light Cridler 15 	4000	 
+1072 Funnel Garin 24 	4500	 
+1071 Ride the Rapids Unknown Artist 79 	300	 
+1070 Beginnings Baron 4 	27500	 
+1069 Renaissance Mogan 50 	5500	 
+1068 Moonlight Mogan 50 	9750	 
+1067 Owl in Flight Miller 49 	7000	 
+1066 Untitled (still life) Unknown Artist 76 	19500	 
+1065 Moonlite  Meglech 47 	1300	 
+1064 Spirit Columns Motherwell 51 	7000	 
+1063 Asleep in the Garden Aserty 3 	110000	 
+1062 Cowboy and Saddle Lowney 41 	18000	 
+1061 Untitled Mural Unknown Artist 78 	3520	 
+1060 Story Sticks Lundquist 42 	650	 
+1059 Dwelling Dawson 17 	16000	 
+1058 The Gathering Rath 60 	250	 
+1057 Untitled Unknown Artist 66 	4500	 
+1056 Cavalry Is Coming Bindner 6 	1900	 
+1055 Starlit Evening Budd 9 	9500	 
+1054 Snake Charmer Mogan 50 	4500	 
+1053 Blue Eyed Indian Bindner 6 	40000	 
+1052 American Rodeo Curtis 16 	3500	 
+1051 Night Version Kerrihard 36 	7000	 
+1050 Cattle Ranch Acconci 1 	10000	 
+1049 Buttercup with Red Lip Blain 7 	400	 
+1048 Comfy Chair Pierobon 57 	800	 
+1047 Medicine Man Maglich 44 	2500	 
+1046 Immediate Gratification Indiana 33 	1500	 
+1045 Leaf Patterns Kritz 38 	2100	 
+1044 Mexican Fiesta Lutes 43 	14000	 
+1043 Creosote Bushes Guys 28 	18000	 
+1042 Coffee on the Trail Ames 2 	7544	 
+1041 Night Version Hamend 29 	3800	 
+1040 Night on the Praire Meglech 47 	1300	 
+1039 Treachery Cox 14 	20000	 
+1038 Spring Flowers Acconci 1 	800	 
+1037 Floating World Fleming 21 	2350	 
+1036 Blackhawk Battenberg 5 	25500	 
+1035 Nature/Nurture Meglech 47 	1300	 
+1034 Beaver Pole Jumble Aserty 3 	28000	 
+1033 Untitled (Woman abstract) Unknown Artist 77 	2500	 
+1032 Rising Sun Lundquist 42 	2000	 
+1031 Inside/Out Ingraham 34 	3500	 
+1030 Ash Bench Guys 28 	13000	 
+1029 Horseshoe Falls Hofmann 31 	15000	 
+1028 Tired Cowboy Mogan 50 	4700	 
+1027 Mountain Climber Meglech 47 	4700	 
+1026 Untitled (couple) Unknown Artist 66 	4000	 
+1025 Profile of a Woman Unknown Artist 68 	625	 
+1024 Spirit and Nature Metz 48 	592	 
+1023 Shooting the Rapids Meglech 47 	1300	 
+1022 The Cowboy Unknown Artist 69 	4200	 
+1021 Bead Wall Aserty 3 	14000	 
+1020 Untitled (Man holding coat) Unknown Artist 73 	3000	 
+1019 The White Heart Unknown Artist 61 	9300	 
+1018 Mountain Scene Blum 8 	2500	 
+1017 Brittlecone Bindner 6 	1300	 
+1016 Untitled Unknown Artist 65 	6000	 
+1015 Punch McIver 46 	10000	 
+1014 Plenty McGraw 45 	500	 
+1013 Superstitions Aserty 3 	78000	 
+1012 Man on Horseback Unknown Artist 74 	8000	 
+1011 Eve Dill 19 	975	 
+1010 Untitled (land with adobe) Unknown Artist 71 	800	 
+1009 Amen Guys 28 	3000	 
+1008 End of the Path Gilhooly 26 	1900	 
+1007 Homage to the Ancestors Unknown Artist 82 	1200	 
+1006 House Remembered Ibe 32 	700	 
+1005 The Hang DiGrigoro 18 	8000	 
+1004 Seeking Shelter Unknown Artist 64 	52000	 
+1003 Spring Flowers Chico 12 	2400	 
+1002 Offerings  Novarre 52 	10000	 
+1001 Red Rock Mountain Mogan 50 	18000	 
+
+Total appraisal value is: 1144623
+The total artworks is: 116
+Total artists is: 87

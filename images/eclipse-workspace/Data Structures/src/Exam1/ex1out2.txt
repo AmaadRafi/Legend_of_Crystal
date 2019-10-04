@@ -1,0 +1,20 @@
+
+Method 2: Jason Nichols-Allen
+
+
+Item: 101 Name: Nail #1    Delete?: false
+Item: 102 Name: Nail #2    Delete?: false
+Item: 103 Name: Nail #3    Delete?: false
+Item: 104 Name: Hammer Small    Delete?: false
+Item: 105 Name: Hammer Large    Delete?: false
+
+Method 2: Jason Nichols-Allen
+
+
+Item: 101 Name: Nail #1    Delete?: false
+Item: 102 Name: Nail #2    Delete?: true
+Item: 103 Name: Nail #3    Delete?: false
+Item: 104 Name: Hammer Small    Delete?: true
+Item: 105 Name: Hammer Large    Delete?: false
+Item: 106 Name: Chainsaw 12"    Delete?: false
+Item: 107 Name: Chainsaw 10"    Delete?: false

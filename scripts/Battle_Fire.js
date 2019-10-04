@@ -16,6 +16,7 @@ var currentEnemy = null;
 var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
+var battleStarted = false;
 var taskCompleted = false;
 var damageOverTime = false;
 var heat = 0;
@@ -32,6 +33,7 @@ function battleFire(){
     party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, fireEnemy);
     currentParty = party;
     currentEnemy = fireEnemy;
+    battleStarted = true;
       
     var cm = document.querySelector('.CodeMirror').CodeMirror;
     party.warrior.debugPrintHeroStats();
@@ -99,14 +101,25 @@ function battleFire(){
         lose();
 }
 function attack(enemyName, heroType){
-    
     party.attack(enemyName, heroType);
 }
+function changeWeapon(heroType, weaponName){
+    party.changeWeapon(heroType, weaponName);
+}
+function changeArmor(heroType, armorName){
+    party.changeArmor(heroType, armorName);
+}
 function use(itemName){
-
     var usedItem = party.use("warrior", itemName);
     if(usedItem)
         damageOverTime = false;
+}
+function showInventory(){
+    if(!battleStarted)
+        party.inventory.showInventory();
+}
+function hideInventory(){
+    party.inventory.hideInventory();
 }
 function gatherEnergy(){
     heat++;

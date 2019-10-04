@@ -23,6 +23,7 @@ var currentEnemy = null;
 var currentParty = null;
 var partyIsAlive = true;
 var bossIsAlive = true;
+var battleStarted = false;
 
 function battleEarth(){
 
@@ -36,6 +37,7 @@ function battleEarth(){
     party = new BattleParty(warriorObject, mageObject, rangerObject, inventoryObject, earthEnemy);
     currentParty = party;
     currentEnemy = earthEnemy;
+    battleStarted = true;
 
     var taskCompleted = false;
     
@@ -72,6 +74,25 @@ function battleEarth(){
     }   
     else
         lose();
+}
+function attack(enemyName, heroType){
+    party.attack(enemyName, heroType);
+}
+function changeWeapon(heroType, weaponName){
+    party.changeWeapon(heroType, weaponName);
+}
+function changeArmor(heroType, armorName){
+    party.changeArmor(heroType, armorName);
+}
+function showInventory(){
+    if(!battleStarted)
+        party.inventory.showInventory();
+}
+function hideInventory(){
+    party.inventory.hideInventory();
+}
+function use(itemName){
+    var usedItem = party.use("warrior", itemName);
 }
 function win(){
 

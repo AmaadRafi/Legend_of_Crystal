@@ -1,0 +1,35 @@
+Jason Nichols-Allen Exam2_Part2
+SP	Value
+97	C
+98	B
+99	A
+
+
+SP	Value
+96	D
+97	C
+98	B
+99	A
+
+
+Character Popped: D
+Character Popped: C
+Character Popped: B
+Character Popped: A
+Stack is empty.  Nothing to pop!
+Character Popped: null
+
+Stack is empty.  Nothing to pop!
+Character Popped: null
+
+SP	Value
+98	10.0
+99	93.7
+
+
+SP	Value
+97	C 10.0
+98	B 7.0
+99	A 93.7
+
+

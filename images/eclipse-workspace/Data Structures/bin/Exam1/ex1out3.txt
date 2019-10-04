@@ -1,0 +1,20 @@
+
+Method 3: Jason Nichols-Allen
+
+
+ID: 101 Name: Nail #1
+ID: 102 Name: Nail #2
+ID: 103 Name: Nail #3
+ID: 104 Name: Hammer Small
+ID: 105 Name: Hammer Large
+
+Method 3: Jason Nichols-Allen
+
+
+ID: 101 Name: Nail #1
+null
+ID: 103 Name: Nail #3
+null
+ID: 105 Name: Hammer Large
+ID: 106 Name: Chainsaw 12"
+ID: 107 Name: Chainsaw 10"
