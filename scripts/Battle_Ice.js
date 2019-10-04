@@ -83,6 +83,7 @@ function battleIce(){
             //lose();
         }
 
+        document.getElementById("health").value = iceEnemy.hitpoints.toString();
     if(iceEnemy.hitpoints <= 0 && taskCompleted == true)
         win();
     else
@@ -109,6 +110,7 @@ function win(){
     bossIsAlive = false;
 
     var popup = document.getElementById("popup");
+    document.getElementById("bossImage").src = "images/enemies/IceDragonDead.png";
 
     popup.innerHTML += "<h1 class='modalWin'>" + currentEnemy.displayName + " was defeated! </h1>";
     popup.innerHTML += "<h3 class='modalSubtext'>The following items were dropped: <h3>";

@@ -66,9 +66,10 @@ function battleEarth(){
     }
 
     party.resetStates();
-
-    if(earthEnemy.hitpoints <= 0 && taskCompleted == true)
+    document.getElementById("health").value = earthEnemy.hitpoints.toString();
+    if(earthEnemy.hitpoints <= 0 && taskCompleted == true){
         win();
+    }   
     else
         lose();
 }
@@ -77,7 +78,7 @@ function win(){
     bossIsAlive = false;
 
     var popup = document.getElementById("popup");
-
+    document.getElementById("bossImage").src = "../images/enemies/EarthDragonDead.png";
     popup.innerHTML += "<h1 class='modalWin'>" + currentEnemy.displayName + " was defeated! </h1>";
     popup.innerHTML += "<h3 class='modalSubtext'>The following items were dropped: <h3>";
     drawTreasureBoxes(popup);

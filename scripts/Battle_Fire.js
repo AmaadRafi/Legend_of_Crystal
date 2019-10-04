@@ -87,6 +87,7 @@ function battleFire(){
         }
         heat = 0;
         party.resetStates();
+        document.getElementById("health").value = fireEnemy.hitpoints.toString();
     } // eval() pastes code from the user into this spots
     
     party.resetStates();
@@ -115,7 +116,7 @@ function win(){
     bossIsAlive = false;
     party.resetHP();
     var popup = document.getElementById("popup");
-
+    document.getElementById("bossImage").src = "../images/enemies/FireDragonDead.png";
     popup.innerHTML += "<h1 class='modalWin'>" + currentEnemy.displayName + " was defeated! </h1>";
     popup.innerHTML += "<h3 class='modalSubtext'>The following items were dropped: <h3>";
     drawTreasureBoxes(popup);
