@@ -131,3 +131,15 @@ button {
     max-height: 100%;
 }
 
+.glowText{
+	animation: GlowAnim 2s linear infinite;
+}
+
+@keyframes GlowAnim {
+	0%, 100% {
+	  color: white;
+	}
+	50% {
+	  color: black;
+	}
+}
