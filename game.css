@@ -150,7 +150,7 @@ button {
 
 @keyframes GlowAnimF {
 	0%, 100% {
-	  color: #ff0808;
+	  color: #c00000;
 	}
 	50% {
 	  color: #ff7b00;
