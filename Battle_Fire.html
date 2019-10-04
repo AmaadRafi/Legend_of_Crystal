@@ -45,9 +45,9 @@
 for(var i = 0; i < 100000; i++){
     gatherEnergy();
 }
-party.attack("fire dragon", "warrior");
-party.attack("fire dragon", "mage");
-party.attack("fire dragon", "ranger");
+party.attack("Ryujin", "warrior");
+party.attack("Ryujin", "mage");
+party.attack("Ryujin", "ranger");
 
 if(turn == 4)
     use("Potion");</textarea>
@@ -58,14 +58,14 @@ if(turn == 4)
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules">
+        <div id="gameRules"><b>
             <div id="battleHeader" class="glowTextFire">Fire Dragon: Ryujin</div>
-            <br/>
-            You must destroy the fire that powers the dragon then attack with 
-            every member of your team to win the battle<br><br>
-            In code, this looks something like: <br>
-            var fire_pit = int;<br>
-            party.attack("enemyName", "partyMember");
+            <br>
+            <div class="center"><img src="images\enemies\FireDragon.png"></div>
+            >HP: 10000 <progress id="health" value="10000" max="10000"></progress>
+            <br><br>
+            >Likes: Nothing.<br><br>
+            >Dislikes: You.<br><br>
         </div>
         <div id="console"></div>  
     </div>
