@@ -10,7 +10,7 @@ var armor = new Armor("Ice Armor", "ice", "heavy", 100, false, "images/weapons/H
 var iceStone = new Item("Ice Stone", "consumable", false, "images/crystals/White_Crystal.jpg");
 var potion = new Item("Potion", "consumable", true, "images/items/Blue_Potion.png");
 potion.setConsumeMessage("You used a " + potion.displayName);
-var iceEnemy = new Enemy("ISSVERN", 2000, staff , armor, [staff, potion, iceStone]);
+var iceEnemy = new Enemy("ISSVERN", 2000, staff , armor, [staff, armor, potion, iceStone]);
 
 var currentEnemy = null;
 var currentParty = null;
@@ -35,6 +35,8 @@ function battleIce(){
     var cm = document.querySelector('.CodeMirror').CodeMirror;
 
     party.warrior.debugPrintHeroStats();
+    party.mage.debugPrintHeroStats();
+    party.ranger.debugPrintHeroStats();
     iceEnemy.debugPrintEnemyStats();
 
     for(var turn = 1; turn <= 10; turn++) {
