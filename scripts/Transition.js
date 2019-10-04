@@ -29,7 +29,7 @@ $(document).ready(function() {
 		window.history.pushState(null, null, $(this).attr('href'));
 		
 		anchorClick($(this).attr('href'), "#background");
-		anchorClick("buttonContainer.html", "#buttonContainer");
+		anchorClick("buttonContainerIce.html", "#buttonContainer");
 		anchorClick("gameRulesIce.html", "#gameRules");
 		anchorClick("overlay.html", "#overlay");
 		
@@ -41,7 +41,7 @@ $(document).ready(function() {
 		window.history.pushState(null, null, $(this).attr('href'));
 		
 		anchorClick($(this).attr('href'), "#background");
-		anchorClick("buttonContainer.html", "#buttonContainer");
+		anchorClick("buttonContainerFire.html", "#buttonContainer");
 		anchorClick("gameRulesFire.html", "#gameRules");
 		anchorClick("overlay.html", "#overlay");
 		
@@ -53,7 +53,7 @@ $(document).ready(function() {
 		window.history.pushState(null, null, $(this).attr('href'));
 		
 		anchorClick($(this).attr('href'), "#background");
-		anchorClick("buttonContainer.html", "#buttonContainer");
+		anchorClick("buttonContainerEarth.html", "#buttonContainer");
 		anchorClick("gameRulesEarth.html", "#gameRules");
 		anchorClick("overlay.html", "#overlay");
 		
