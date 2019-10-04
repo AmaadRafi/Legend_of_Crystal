@@ -34,7 +34,9 @@
     <div id ="leftScreen">
         <img id ="map" src="images/map.png">
         <div id="codeBox">
-                <textarea name="Code" id="code">goToEarth();</textarea>
+                <textarea name="Code" id="code">//goToIce();
+//goToFire();
+goToEarth();</textarea>
         </div>
         <div id="buttonContainer">
         <button id="apply" onclick="addScript()">Apply</button>
@@ -42,9 +44,17 @@
         </div>
     </div>
     <div id ="rightScreen">
-        <div id="gameRules">Welcome to the main game world. The mission of this game is to go into each of
-            the maps (earth, fire, and snow) and collect elements, in order to defeat the final boss. in this 
-            game you code to play. enter a game map to enter first...( goToEarth() goToIce() goToFire() ).
+        <div id="gameRules"> 
+            <h3 class="gameRulesBold">Welcome to the main game world.</h3> 
+            The mission of this game is to go into each of
+            the maps (earth, fire, and snow) and collect elements, in order to defeat the final boss. In this 
+            game you code to play. <br/> <br/>
+            Code in a game map to enter first... <br/>
+            
+            <div class="gamesRulesBold"> goToEarth(); <br>
+            goToIce(); <br>
+            goToFire();
+            </div>
         </div>
         <div id="console"></div>  
     </div>
