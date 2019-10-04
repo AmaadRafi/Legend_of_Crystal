@@ -61,11 +61,13 @@ class Hero {
             if(inventoryItem.isConsumable){ 
                 delete inventory[inventoryItemIndex];
                 this.alertUsedItem(thisItem);
+                return true;
             }
             else{
                 this.alertNonConsumable(thisItem);
             }
         }
+        return false;
     }
     /*================================== changeWeapon =====================================
     Similar behavior to 'use' (see above).  Item is removed from inventory and swapped with
@@ -155,8 +157,8 @@ class Hero {
         console.log("you cannot equip " + thisItem + " in the " + slot + " slot"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
     debugPrintHeroStats(){
-        console.log("hero name is: " + this.name + "\thero HP is: " + this.hitpoints + "\thero weapon is: " + this.weapon.name + 
-        "\thero aromor is: " + this.armor.name); 
+        console.log(this.name + "\tHP: " + this.hitpoints + "\tWeapon: " + this.weapon.name + 
+        "\tArmor: " + this.armor.name); 
     }
     debugPrintInventory(){
         console.log(this.inventory.join());
@@ -261,38 +263,6 @@ class HeroRanger extends Hero{
             heroObject.armor.armorType, heroObject.armor.defenseValue, 
             heroObject.armor.isConsumable, heroObject.armor.imageSource);
             
-        return heroObject;
-    }
-}
-class HeroSavior extends Hero{
-    constructor(name) {
-        super(name);
-        this.name = "Sonaht"
-        this.heroType = "SAVIOR";
-        this.allowedWeaponType = "GAUNLET";
-        this.allowedArmorType = "NONE";
-        var defaultRangeWeapon = new Weapon("Empty Gauntlet", "none", "gauntlet", 1, false);
-        var defaultRangeClothes = new Armor("Clothes", "none", "light", 1, false);
-        this.weapon = defaultRangeWeapon;
-        this.armor = defaultRangeClothes;
-    }
-    
-    /*================================== createFromCache =====================================
-    see above
-
-    Jason Allen 9/14/2019
-    */
-    static createFromCache(heroData) {
-        var heroObject = Object.assign(new HeroRanger(), JSON.parse(heroData));
-
-        heroObject.weapon = new Weapon(heroObject.weapon.displayName, heroObject.weapon.element, 
-            heroObject.weapon.weaponType, heroObject.weapon.attackPower, 
-            heroObject.weapon.isConsumable, heroObject.weapon.imageSource);
-
-        heroObject.armor = new Armor(heroObject.armor.displayName, heroObject.armor.element, 
-            heroObject.armor.armorType, heroObject.armor.defenseValue, 
-            heroObject.armor.isConsumable, heroObject.armor.imageSource);
-
         return heroObject;
     }
 }

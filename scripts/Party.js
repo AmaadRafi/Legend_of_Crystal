@@ -35,6 +35,8 @@ class Party {
 
         this.inventory.buildInventoryDisplay();
         this.inventory.showInventory();
+
+        CacheHandler.addToCache(this.warrior, this.mage, this.ranger, this.inventory);
     }
     changeArmor(heroType, armor){
 
@@ -43,6 +45,8 @@ class Party {
 
         this.inventory.buildInventoryDisplay();
         this.inventory.showInventory();
+
+        CacheHandler.addToCache(this.warrior, this.mage, this.ranger, this.inventory);
     }
     use(heroType, item){
 
@@ -52,10 +56,16 @@ class Party {
         this.inventory.buildInventoryDisplay();
         this.inventory.showInventory();
     }
+    resetHP(){
+        this.warrior.hitpoints = 100;
+        this.mage.hitpoints = 100;
+        this.ranger.hitpoints = 100;
+    }
     alertHeroNotFound(heroName){
         alert(heroName + " not found"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
     }
 }
+
 class BattleParty extends Party{
 
     constructor(warrior, mage, ranger, inventory, currentEnemy){
@@ -81,6 +91,14 @@ class BattleParty extends Party{
         else{
             console.log(enemyName + " is not the current enemy.  Try again.");
         }
+        console.log("\n");
+    }
+    use(heroType, item){
+        var hero = this.selectHero(heroType);
+        var usedItem = hero.use(item, this.inventory.inventory);
+
+        return usedItem;
+
     }
     takeTreasure(){
         for(var i = 0; i < currentEnemy.treasureChest.length; i++){

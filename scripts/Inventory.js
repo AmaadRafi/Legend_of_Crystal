@@ -152,9 +152,11 @@ class Inventory{
     }
     alertInventoryFull(){
         console.log("Inventory Full!\n"); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
+        onsole.log(" ");
     }
     alertItemNotFound(thisItem){
         console.log(thisItem + " not found."); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */
+        console.log(" ");
     }
     alertItemPickedUp(thisItem){
         console.log("You picked up a " + thisItem); /* toDo: this statement must go in the real game - Jason Allen 9/11/2019 */

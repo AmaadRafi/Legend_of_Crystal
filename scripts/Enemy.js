@@ -17,7 +17,12 @@ class Enemy {
     }
     attack(playerCharacter){
         if(!playerCharacter.isInvulnerable)
-        playerCharacter.hitpoints -= this.weapon.attackPower;
+            playerCharacter.hitpoints -= this.weapon.attackPower;
+    }
+
+    attack(playerCharacter, modifier){
+        if(!playerCharacter.isInvulnerable)
+            playerCharacter.hitpoints -= (this.weapon.attackPower * 100);
     }
     debugPrintEnemyStats(){
         console.log("Enemy name is: " + this.name + "\tEnemy HP is: " + this.hitpoints + "\tEnemy weapon is: " + this.weapon.name + 
