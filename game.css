@@ -74,8 +74,16 @@ button {
 	height: 40%;
 	overflow: scroll;
 }
+
+.gameRulesBold{
+	background-color:NavajoWhite;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 900;
+}
+
 #gameRules{
 	background-color:NavajoWhite;
+	font-family: 'Courier New', Courier, monospace;
 	padding-left: 10px;
 	position: absolute;
 	width: 100%;
