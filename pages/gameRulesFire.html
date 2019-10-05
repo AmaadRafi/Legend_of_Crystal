@@ -1,10 +1,11 @@
-<div id="gameRules"><b>
-        <div id="battleHeader" class="glowTextFire">Fire Dragon: Ryujin</div>
-        <br>
-        <div class="center"><img id="bossImage" src="\images\enemies\FireDragon.png"></div>
-        <br>
-        >HP <progress id="health" value="10000" max="10000"></progress>
-        <br><br>
-        >Likes: Nothing.<br><br>
-        >Dislikes: You.<br><br>
+<b>
+<div id="battleHeader" class="glowTextFire">Fire Dragon: Ryujin</div>
+<br>
+<div class="center"><img id="bossImage" src="\images\enemies\FireDragon.png"></div>
+<br>>HP<progress id="health" value="10000" max="10000"></progress>
+<div id = "instructions">Available Actions:<br><br>
+gatherEnergy(); -> gathers a single unit of energy<br><br>
+a var 'turn' can be accessed, which holds the current turn of the battle<br><br>
+use("itemName"); uses the current item in inventory<br><br>
+attack("Eryven", "heroName"); where "heroName" is "warrior", "ranger", or "mage".
 </div>

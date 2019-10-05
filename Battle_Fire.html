@@ -44,16 +44,7 @@
             <div id="character"></div>
             
         <div id="codeBox">
-            <textarea name="Code" id="code">
-for(var i = 0; i < 100000; i++){
-    gatherEnergy();
-}
-party.attack("Ryujin", "warrior");
-party.attack("Ryujin", "mage");
-party.attack("Ryujin", "ranger");
-
-if(turn == 4)
-    use("Potion");</textarea>
+            <textarea name="Code" id="code"></textarea>
         </div>
         <div id="buttonContainer">
         <button id="apply" onclick="battleFire()">Apply</button>
@@ -65,11 +56,13 @@ if(turn == 4)
             <div id="battleHeader" class="glowTextFire">Fire Dragon: Ryujin</div>
             <br>
             <div class="center"><img id="bossImage" src="\images\enemies\FireDragon.png"></div>
-            <br>
-            >HP <progress id="health" value="10000" max="10000"></progress>
-            <br><br>
-            >Likes: Nothing.<br><br>
-            >Dislikes: You.<br><br>
+            <br>>HP<progress id="health" value="10000" max="10000"></progress>
+            <div id = "instructions">Available Actions:<br><br>
+            gatherEnergy(); -> gathers energy from a single crystal<br><br>
+            a var 'turn' can be accessed, which holds the current turn of the battle<br><br>
+            use("itemName"); uses the current item in inventory<br><br>
+            attack("Eryven", "heroName"); where "heroName" is "warrior", "ranger", or "mage".
+            </div>
         </div>
         <div id="console"></div>  
     </div>

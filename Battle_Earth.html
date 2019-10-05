@@ -44,11 +44,7 @@
             </div>
             <div id="character"></div>
         <div id="codeBox">
-            <textarea name="Code" id="code">var pillars = 5;
-
-party.attack("Eryven", "warrior");
-party.attack("Eryven", "mage");
-party.attack("Eryven", "ranger");</textarea>
+            <textarea name="Code" id="code"></textarea>
         </div>
         <div id="buttonContainer">
         <button id="apply" onclick="battleEarth()">Apply</button>
@@ -62,9 +58,10 @@ party.attack("Eryven", "ranger");</textarea>
             <div class="center"><img id="bossImage" src="images\enemies\EarthDragon.png"></div>
             <br>
             >HP <progress id="health" value="300" max="300"></progress>
-            <br><br>
-            >Likes: Butter Pecan Icecream, Reading, Chai Tea<br><br>
-            >Dislikes: Littering, Run Time Errors<br><br>
+            <div id = "instructions">Available Actions:<br><br>
+                Set a var 'pillars' = to some number<br><br>
+                attack("Eryven", "heroName"); where "heroName" is "warrior", "ranger", or "mage".
+            </div>
         </div>
         <div id="console"></div>  
     </div>
